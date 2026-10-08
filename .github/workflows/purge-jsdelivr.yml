@@ -1,0 +1,18 @@
+name: purge-jsdelivr
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 刷新 jsDelivr 缓存
+        run: |
+          for f in blacklist.txt whitelist.txt; do
+            echo "purging $f"
+            curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$f" | head -c 300
+            echo
+          done
