@@ -1,0 +1,110 @@
+! Title: 自用广告域名黑名单
+! Description: 由 APK 逆向提取的 App 广告/追踪域名拦截规则（AdGuard / AdGuard Home 语法）
+! Homepage: https://github.com/50521136/ad-dns-rules
+! 说明: 每条规则上方都标注了来源 App 与 SDK。未启用的规则以 ! 开头注释保留，需要时删掉开头的 ! 即可。
+! 维护: 新增 App 请照抄现有分节格式，见 README。
+!
+! ==========================================================================
+! [酷安 CoolApk 16.6.4] 穿山甲 / Pangle / GroMore / 巨量引擎（字节跳动，主广告源）
+! 来源: classes.dex + assets/SDK_Setting_5014732.json + assets/csj_site_config.json
+! ==========================================================================
+||pangolin-sdk-toutiao.com^
+||pangolin-sdk-toutiao1.com^
+||pangolin-sdk-toutiao-b.com^
+||pglstatp-toutiao.com^
+||csjplatform.com^
+||pangle.cn^
+||ad.toutiao.com^
+||phoniex.toutiao.com^
+||toutiaopage.com^
+||ctobsnssdk.com^
+||applog.snssdk.com^
+||rtapplog.snssdk.com^
+||rtlog.snssdk.com^
+||log.snssdk.com^
+||api.snssdk.com^
+||i.snssdk.com^
+||mon.zijieapi.com^
+||tnc3-aliec2.zijieapi.com^
+||apmplus.volces.com^
+||apps.bytesfield.com^
+||apps.bytesfield-b.com^
+||sf1-amtos-cdn.bytesmanager.com^
+||apps.oceanengine.com^
+||applog.bytedance.net^
+||cdn-tos-cn.bytedance.net^
+||scc.bytedance.com^
+||databyterangers.com.cn^
+
+! ==========================================================================
+! [酷安 CoolApk 16.6.4] 优量汇 / GDT / 腾讯广告
+! 来源: assets/gdt_plugin/gdtadv2.jar（嵌套 jar，必须单独解包才能扫到）
+! ==========================================================================
+||gdt.qq.com^
+||ugdtimg.com^
+||gdtimg.com^
+||e.qq.com^
+||union.eff.qq.com^
+||tdid.m.qq.com^
+||trace.qq.com^
+
+! ==========================================================================
+! [酷安 CoolApk 16.6.4] 快手广告 Ksad
+! 来源: assets/ksad_idc.json（明文列出全部 IDC 域名）
+! ==========================================================================
+||adkwai.com^
+||e.kuaishou.com^
+||e.kuaishou.cn^
+||gifshow.com^
+||ksapisrv.com^
+||kskwai.com^
+||gskwai.com^
+||kwaizt.com^
+||kuaishouzt.com^
+
+! ==========================================================================
+! [酷安 CoolApk 16.6.4] 广告聚合平台 TopOn / AnyThink
+! ==========================================================================
+||anythinktech.com^
+
+! ==========================================================================
+! [酷安 CoolApk 16.6.4] 广告策略下发 / 点击追踪 / 反作弊上报
+! ==========================================================================
+||statisticslinks.com^
+||puata.info^
+||birdgesdk.com^
+
+! ==========================================================================
+! 可选档：拦了更干净，但有副作用，需要时去掉行首的 !
+! ==========================================================================
+! [酷安] 抖音唤起与落地页 —— 拦了 App 内跳转抖音会失效
+!||open.douyin.com^
+!||v.douyin.com^
+! [酷安] 快手图片 CDN —— 拦了酷安里的快手内容图片会挂
+!||yximgs.com^
+! [酷安] 友盟统计 —— 是统计不是广告，友盟本身也做广告联盟，看个人取舍
+!||umeng.com^
+!||umengcloud.com^
+! [酷安] 小米广告 SDK（设备级，非本 App 自营）
+!||api.ad.xiaomi.com^
+!||sdkconfig.ad.xiaomi.com^
+! [酷安] 京东联盟 / 电商导流
+!||union-click.jd.com^
+!||knicks.jd.com^
+
+! ==========================================================================
+! 明确不建议拦截（列在这里是为了提醒：通用规则集常拦这些，会坏功能）
+! 风控 / 验证码 / 一键登录 / 推送 / 支付 / 第三方登录
+! ==========================================================================
+! ||shuzilm.cn^            数美设备指纹 → 触发风控、验证码异常
+! ||id6.me^                数美/移动设备标识 → 同上
+! ||dun.163.com^           网易易盾验证码 → 登录验证失败
+! ||cstaticdun.126.net^    网易易盾静态资源
+! ||tpns.tencent.com^      腾讯移动推送 → 推送收不到
+! ||mpush-api.aliyun.com^  阿里移动推送 → 同上
+! ||cmpassport.com^        中国移动一键登录 → 登录失败
+! ||e.189.cn^              电信一键登录 → 登录失败
+! ||log.wechatpay.cn^      微信支付日志 → 支付异常风险
+! ||i.gtimg.cn^            QQ 登录/分享资源 → 第三方登录挂
+! ||qzonestyle.gtimg.cn^   QQ 空间样式资源 → 同上
+! ||api.coolapk.com^       酷安自身 API —— 自营广告也走这里，拦了整个 App 就废了
