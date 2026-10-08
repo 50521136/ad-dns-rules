@@ -91,6 +91,50 @@
 !||knicks.jd.com^
 
 ! ==========================================================================
+! [今日水印相机 com.xhey.xcamera 3.0.465.8] 广告
+! 来源: classes11.dex（https://ad.xhey.top/next/ 与 ad-acc.xhey.top/next/）
+!       + 穿山甲/快手/TopOn/百度/1RTB 各 SDK
+! 亮点: 自家广告接口 ad.xhey.top 与业务域名 net-cloud.xhey.top / longmen.xhey.top
+!       完全分离 —— 可以直接拦掉，不影响拍照、水印、上传。
+! ==========================================================================
+||ad.xhey.top^
+||ad-acc.xhey.top^
+
+! --- 百度广告联盟 ---
+||cpro.baidustatic.com^
+||union.baidu.com^
+
+! --- 1RTB 广告交易平台（DSP/SSP）---
+||1rtb.net^
+||1rtb.com^
+
+! --- 巨量引擎广告统计 ---
+||analytics.oceanengine.com^
+||lf-event-manager.oceanengine.com^
+
+! --- 其他广告 ---
+||universe.ad.live^
+
+! ==========================================================================
+! [今日水印相机] 可选档：崩溃上报 / 行为统计 / 推送 —— 不影响功能，属追踪
+! ==========================================================================
+!||volceapplog.com^
+!||sensorsdata.cn^
+!||sareport.xhey.top^
+!||android.bugly.qq.com^
+!||pro.bugly.qq.com^
+!||cloud.bugly.qq.com^
+!||rmonitor.qq.com^
+!||mta.qq.com^
+!||mdt.qq.com^
+!||h-adashx.ut.taobao.com^
+!||adash-emas.cn-hangzhou.aliyuncs.com^
+!||px.ucweb.com^
+!||thefatherofsalmon.com^
+!||htrace.wetvinfo.com^
+!||openinstall.io^
+
+! ==========================================================================
 ! [红果免费短剧 com.phoenix.read 7.2.5.32] 广告请求 API —— 与内容域名分离，可安全拦截
 ! 证据: classes15.dex 里 https://ad.zijieapi.com/api/ad/v1/{dislike,inspire_send,report}
 !       classes6.dex 里广告调度配置 service_name=ad_default / ad_serial_route,
@@ -193,7 +237,25 @@
 ! ||mmbiz.qpic.cn^               公众号正文与广告图片共用，拦了正文图也没了
 ! ||mp.weixin.qq.com^            公众号文章本体
 !
-! --- 红果免费短剧（不要拦，拦了内容就没了）---
+! --- 今日水印相机（不要拦，拦了功能就没了）---
+! ||xhey.top^                    整域 —— 会把 ad.xhey.top 广告接口一起放掉
+! ||net-cloud.xhey.top^          业务 API（上传/同步/团队）
+! ||net-cloud-tx.xhey.top^       业务 API
+! ||longmen.xhey.top^            业务 API（版本、活动、渠道）
+! ||h5.xhey.top^                 业务 H5（水印模板、活动页、广告投诉页）
+! ||static.xhey.top^             静态资源
+! ||xcamerares.xhey.top^         官方资源 CDN（阿里云 OSS）
+! ||member-ship.xhey.top^        会员
+! ||api.map.baidu.com^           百度地图定位 —— 水印要写经纬度
+! ||loc.map.baidu.com^           百度定位
+! ||ofloc.map.baidu.com^         百度定位
+! ||client.map.baidu.com^        百度地图
+! ||daup.map.baidu.com^          百度地图
+! ||openspeech.bytedance.com^    语音识别（水印语音输入）
+! ||getui.com^                   个推推送
+! ||gepush.com^                  个推推送
+! ||igexin.com^                  个推推送
+! ||getui.net^                   个推推送
 ! ||api.snssdk.com^             红果正文内容接口 /api/novel/book/reader/content/v1 —— 别拦
 ! ||i.snssdk.com^               红果金币任务/签到/桌面组件接口 /luckycat/novel/v1/* —— 别拦
 ! ||ib.snssdk.com^              同上（备用）

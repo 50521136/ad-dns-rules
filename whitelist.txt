@@ -53,6 +53,32 @@
 @@||ilink.weixin.qq.com^
 
 ! ==========================================================================
+! [今日水印相机] 防止 anti-AD 误杀业务域名、定位与推送
+! 注意不要写 @@||xhey.top^ —— 会把 ad.xhey.top 广告接口一起放行
+! ==========================================================================
+@@||net-cloud.xhey.top^
+@@||net-cloud-tx.xhey.top^
+@@||longmen.xhey.top^
+@@||h5.xhey.top^
+@@||static.xhey.top^
+@@||www.xhey.top^
+@@||xcamerares.xhey.top^
+@@||member-ship.xhey.top^
+@@||today.xhey.top^
+@@||fanzhaapi.xhey.top^
+@@||api.map.baidu.com^
+@@||loc.map.baidu.com^
+@@||ofloc.map.baidu.com^
+@@||client.map.baidu.com^
+@@||daup.map.baidu.com^
+@@||itsdata.map.baidu.com^
+@@||openspeech.bytedance.com^
+@@||getui.com^
+@@||gepush.com^
+@@||igexin.com^
+@@||getui.net^
+
+! ==========================================================================
 ! [红果免费短剧] 防止 anti-AD 误杀红果的内容域名与资源热更新
 ! ==========================================================================
 @@||fqnovel.com^
