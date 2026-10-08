@@ -93,6 +93,35 @@
 !||knicks.jd.com^
 
 ! ==========================================================================
+! [微信 WeChat 8.0.79] 微信广告
+! 来源: classes.dex / classes7.dex / assets/mbad_pic.txt / assets/mbad_video.txt
+!       / assets/mbpkgs/MagicAdBrandService.wspkg / libwechatmm.so
+!
+! 重要: 微信广告的请求、下发、点击落地页全部走 mp.weixin.qq.com
+!       (/cgi-bin/mmbiz-bin/recommend/timelinecard、?weixinadinfo=...),
+!       素材走 mmbiz.qpic.cn / wxsnsdythumb.wxs.qq.com —— 与正文、朋友圈内容同域，
+!       所以下面这些域名只能拦掉"上报"，拦不掉广告位本身。
+!       微信内嵌的广点通落地页/素材已被上面酷安分节的 gdt.qq.com / ugdtimg.com
+!       / e.qq.com / trace.qq.com 覆盖。
+! ==========================================================================
+||ad.wx.com^
+||pingjs.qq.com^
+||btrace.qq.com^
+
+! ==========================================================================
+! 通用第三方广告与统计（在微信 APK 中发现，与具体 App 无关）
+! ==========================================================================
+||googlesyndication.com^
+||doubleclick.net^
+||googleadservices.com^
+||google-analytics.com^
+||app-measurement.com^
+||masdk.3g.qq.com^
+||appchannel.html5.qq.com^
+||pmir.3g.qq.com^
+||aegis.qq.com^
+
+! ==========================================================================
 ! 明确不建议拦截（列在这里是为了提醒：通用规则集常拦这些，会坏功能）
 ! 风控 / 验证码 / 一键登录 / 推送 / 支付 / 第三方登录
 ! ==========================================================================
@@ -108,3 +137,17 @@
 ! ||i.gtimg.cn^            QQ 登录/分享资源 → 第三方登录挂
 ! ||qzonestyle.gtimg.cn^   QQ 空间样式资源 → 同上
 ! ||api.coolapk.com^       酷安自身 API —— 自营广告也走这里，拦了整个 App 就废了
+!
+! --- 微信（通用规则集常误拦，注意核对）---
+! ||ad.weixin.qq.com^            微信「个性化广告」关闭入口，拦了就关不掉广告
+! ||ads.privacy.qq.com^          微信广告偏好设置页（wxoptout），同上
+! ||dns.weixin.qq.com^           微信私有 DNS 解析服务，拦了网络异常
+! ||dns.weixin.qq.com.cn^        同上
+! ||aedns.weixin.qq.com^         微信加速 DNS，anti-AD 会拦，属误伤
+! ||as.weixin.qq.com^            微信域名映射表里的正常业务域
+! ||apd-pcdnwxstat.teg.tencent-cloud.net^    微信 PCDN 传输（anti-AD 会拦，误伤）
+! ||apd-pcdnwxlogin.teg.tencent-cloud.net^   微信登录长连接，拦了掉线
+! ||apd-pcdnwxnat.teg.tencent-cloud.net^     微信 NAT 穿透，拦了连不上
+! ||wxs.qq.com^                  朋友圈缩略图 / 小程序静态资源 CDN
+! ||mmbiz.qpic.cn^               公众号正文与广告图片共用，拦了正文图也没了
+! ||mp.weixin.qq.com^            公众号文章本体

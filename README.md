@@ -44,8 +44,11 @@ AdGuard / AdGuard Home / 任意 adblock 语法的过滤器都能用：
 | App | 版本 | 拦截规则 | 分析记录 |
 |---|---|---|---|
 | 酷安 CoolApk | 16.6.4 (2609291) | 47 条 | [docs/coolapk-16.6.4.md](docs/coolapk-16.6.4.md) |
+| 微信 WeChat | 8.0.79 | 3 条 + 9 条通用第三方 | [docs/wechat-8.0.79.md](docs/wechat-8.0.79.md) |
 
 酷安集成的广告 SDK：穿山甲/Pangle/GroMore、优量汇/GDT、快手广告 Ksad、TopOn/AnyThink 聚合、友盟统计、点击追踪。
+
+微信的情况不一样：**广告请求、下发、落地页、素材全部和正文同域**（`mp.weixin.qq.com` / `mmbiz.qpic.cn`），DNS 层只能拦掉上报，拦不掉广告位本身。详见分析记录。这一节的主要价值反而是 `whitelist.txt` 里那批放行规则——防止 anti-AD 之类的通用规则集把微信的网络/DNS/CDN 一起拦掉。
 
 ## 添加新的 App
 
