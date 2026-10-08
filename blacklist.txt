@@ -22,8 +22,6 @@
 ||rtapplog.snssdk.com^
 ||rtlog.snssdk.com^
 ||log.snssdk.com^
-||api.snssdk.com^
-||i.snssdk.com^
 ||mon.zijieapi.com^
 ||tnc3-aliec2.zijieapi.com^
 ||apmplus.volces.com^
@@ -93,6 +91,49 @@
 !||knicks.jd.com^
 
 ! ==========================================================================
+! [红果免费短剧 com.phoenix.read 7.2.5.32] 广告请求 API —— 与内容域名分离，可安全拦截
+! 证据: classes15.dex 里 https://ad.zijieapi.com/api/ad/v1/{dislike,inspire_send,report}
+!       classes6.dex 里广告调度配置 service_name=ad_default / ad_serial_route,
+!       strategy_info: {"ad.zijieapi.com": "ads5-normal.zijieapi.com"}
+! 注意: 不要图省事拦整个 zijieapi.com —— mon/verify/gecko/relation/minigame
+!       等业务域名同域，拦了 App 会出问题。
+! ==========================================================================
+||ad.zijieapi.com^
+||ads.zijieapi.com^
+||ads3-normal.zijieapi.com^
+||ads5-normal.zijieapi.com^
+||ads3-normal-lf.zijieapi.com^
+||ads3-normal-hl.zijieapi.com^
+||ads3-normal-lq.zijieapi.com^
+||ads5-normal-lf.zijieapi.com^
+||ads5-normal-hl.zijieapi.com^
+||ads5-normal-lq.zijieapi.com^
+
+! ==========================================================================
+! [红果免费短剧] 可选档：字节统计上报与推广下载 —— 不影响内容，但属追踪
+! ==========================================================================
+!||mon.snssdk.com^
+!||mon.zijieapi.com^
+!||log.zijieapi.com^
+!||applog.zijieapi.com^
+!||applog.snssdk.com^
+!||monsetting.toutiao.com^
+!||log3-applog.fqnovel.com^
+!||log5-applog.fqnovel.com^
+!||rtlog3-applog.fqnovel.com^
+!||rtlog5-applog.fqnovel.com^
+!||abtest-ch.snssdk.com^
+!||mcs.snssdk.com^
+!||mssdk.zijieapi.com^
+!||dm.toutiao.com^
+!||dm.bytedance.com^
+!||dm.pstatp.com^
+!||nativeapp.toutiao.com^
+!||dig.bdurl.net^
+!||dig.zjurl.cn^
+!||h.online-metrix.net^
+
+! ==========================================================================
 ! [微信 WeChat 8.0.79] 微信广告
 ! 来源: classes.dex / classes7.dex / assets/mbad_pic.txt / assets/mbad_video.txt
 !       / assets/mbpkgs/MagicAdBrandService.wspkg / libwechatmm.so
@@ -151,3 +192,23 @@
 ! ||wxs.qq.com^                  朋友圈缩略图 / 小程序静态资源 CDN
 ! ||mmbiz.qpic.cn^               公众号正文与广告图片共用，拦了正文图也没了
 ! ||mp.weixin.qq.com^            公众号文章本体
+!
+! --- 红果免费短剧（不要拦，拦了内容就没了）---
+! ||api.snssdk.com^             红果正文内容接口 /api/novel/book/reader/content/v1 —— 别拦
+! ||i.snssdk.com^               红果金币任务/签到/桌面组件接口 /luckycat/novel/v1/* —— 别拦
+! ||ib.snssdk.com^              同上（备用）
+! ||is.snssdk.com^              设置接口 /service/settings/v3/ —— 别拦
+! ||zijieapi.com^                整域 —— mon/verify/gecko/relation/minigame 等业务域名同域
+! ||api.fqnovel.com^             内容 API
+! ||api5-normal.fqnovel.com^     内容 API（含 -lf/-hl/-lq 区域变体）
+! ||reading.snssdk.com^          内容 API
+! ||i.snssdk.com^                内容 API
+! ||is.snssdk.com^               内容 API
+! ||gecko.zijieapi.com^          字节资源热更新(Gecko)，拦了 UI 资源可能加载失败
+! ||gecko.snssdk.com^            同上
+! ||fqnovelpic.com^              封面图 CDN
+! ||lf3-reading.fqnovelpic.com^  封面图 CDN
+! ||p1-reading.byteimg.com^      封面图 CDN
+! ||p3-novel.byteimg.com^        封面图 CDN
+! ||bytegecko.com^               视频/资源 CDN
+! ||lf3-reading.fqnovelstatic.com^  静态资源

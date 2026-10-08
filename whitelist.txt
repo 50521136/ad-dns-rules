@@ -53,6 +53,36 @@
 @@||ilink.weixin.qq.com^
 
 ! ==========================================================================
+! [红果免费短剧] 防止 anti-AD 误杀红果的内容域名与资源热更新
+! ==========================================================================
+@@||fqnovel.com^
+@@||fqnovelpic.com^
+@@||fqnovelstatic.com^
+@@||bytegecko.com^
+@@||byteimg.com^
+@@||bytednsdoc.com^
+@@||api.snssdk.com^
+@@||i.snssdk.com^
+@@||ib.snssdk.com^
+@@||is.snssdk.com^
+@@||reading.snssdk.com^
+@@||bsync.snssdk.com^
+@@||gecko.snssdk.com^
+@@||gecko.zijieapi.com^
+@@||ic.snssdk.com^
+@@||mcs.snssdk.com^
+@@||open.snssdk.com^
+@@||verify.zijieapi.com^
+@@||relation.zijieapi.com^
+@@||polaris.zijieapi.com^
+@@||tnc3-aliec2.bytedance.com^
+@@||tnc3-bjlgy.bytedance.com^
+@@||tnc3-alisc1.bytedance.com^
+@@||data.hicloud.com^
+@@||dt.dbankcloud.ru^
+@@||grs.dbankcloud.com^
+
+! ==========================================================================
 ! 通用放行：只放行确实用得到的域名，不要图省事写 @@||qq.com^ 这种父域
 ! 例外规则优先级高于拦截规则，放行父域会把黑名单里的广告子域一起放行
 ! ==========================================================================
