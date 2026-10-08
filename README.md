@@ -18,9 +18,18 @@ https://raw.githubusercontent.com/50521136/ad-dns-rules/main/whitelist.txt
 
 两条都按「自定义过滤规则 / 订阅」加入即可，白名单的优先级高于黑名单。
 
-> 国内网络访问 raw.githubusercontent.com 可能不通，可换 jsDelivr 镜像：
-> `https://cdn.jsdelivr.net/gh/50521136/ad-dns-rules@main/blacklist.txt`
-> `https://cdn.jsdelivr.net/gh/50521136/ad-dns-rules@main/whitelist.txt`
+> 国内网络访问 raw.githubusercontent.com 可能不通，可换 jsDelivr 镜像。
+> **注意用 `fastly.jsdelivr.net` 或 `gcore.jsdelivr.net`，不要用 `cdn.jsdelivr.net`** ——
+> 后者（Cloudflare 节点）对 `@main` 分支引用有最长 12 小时的缓存，推送后经常还在发旧版。
+>
+> ```
+> https://fastly.jsdelivr.net/gh/50521136/ad-dns-rules@main/blacklist.txt
+> https://fastly.jsdelivr.net/gh/50521136/ad-dns-rules@main/whitelist.txt
+> ```
+>
+> 仓库已配好 GitHub Action，每次推送会自动调 jsDelivr 的 purge 接口；但 Cloudflare 节点仍可能滞后。
+> 要绝对拿到当前版本，用 commit SHA 或 raw 地址：
+> `https://raw.githubusercontent.com/50521136/ad-dns-rules/main/blacklist.txt`
 
 ### AdGuard Home 导入
 
