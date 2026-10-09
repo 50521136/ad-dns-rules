@@ -4,8 +4,9 @@ name: merge
 # 产出 dist/ 下的合并列表并提交回仓库。
 on:
   schedule:
-    # 每周一 02:00 CST（= 周日 18:00 UTC）
-    - cron: '0 18 * * 0'
+    # 每天 02:00 CST（= 前一天 18:00 UTC）
+    # 上游 217heidai / 23-4.cn 都是每天编译，跑太稀会滞后
+    - cron: '0 18 * * *'
   workflow_dispatch:
   push:
     branches: [main]
