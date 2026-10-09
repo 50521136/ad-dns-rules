@@ -1,0 +1,98 @@
+{
+  "_comment": "合并流水线配置。改这里就能增删订阅源，GitHub Actions 会按此自动拉取/合并/去重。",
+  "block": [
+    {
+      "name": "217heidai",
+      "url": "https://cdn.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockdns.txt",
+      "enabled": true,
+      "note": "上游基础列表；实例上原来订阅了两份镜像，这里只留一份"
+    },
+    {
+      "name": "234",
+      "url": "https://www.23-4.cn/rules/merged-block.txt",
+      "enabled": true,
+      "note": "独占条目最多（约 20 万），覆盖抖音/快手/腾讯广告系"
+    },
+    {
+      "name": "menghui",
+      "url": "https://raw.githubusercontent.com/Menghuibanxian/AdguardHome/main/Black.txt",
+      "enabled": true
+    },
+    {
+      "name": "扶风",
+      "url": "https://raw.githubusercontent.com/Thelongdarkorg/ad-rules-merged/main/merged.txt",
+      "enabled": true,
+      "note": "含 hosts 语法，会被归一化"
+    },
+    {
+      "name": "海哥",
+      "url": "https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt",
+      "enabled": true
+    },
+    {
+      "name": "暗雅日记",
+      "url": "https://raw.githubusercontent.com/3316134332/qy-Ads-Rule/refs/heads/main/black.txt",
+      "enabled": true,
+      "note": "体量小、独占条目少，保留观察"
+    },
+    {
+      "name": "下个id见",
+      "url": "https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/master/SMAdHosts",
+      "enabled": false,
+      "note": "实测独占 0 条（全部被其他源覆盖），默认关闭；需要时置 true"
+    },
+    {
+      "name": "自建",
+      "url": "file:blacklist.txt",
+      "enabled": true,
+      "self": true,
+      "note": "本仓库 blacklist.txt，优先级最高：allow 列表里任何覆盖它的条目都会被剔除"
+    }
+  ],
+  "allow": [
+    {
+      "name": "234",
+      "url": "https://www.23-4.cn/rules/merged-allow.txt",
+      "enabled": true,
+      "note": "防误杀白名单，6569 行裸 ||domain^ 语法（无 @@），含 7 条整域放行 —— 会被 policy 处理"
+    },
+    {
+      "name": "menghui",
+      "url": "https://raw.githubusercontent.com/Menghuibanxian/AdguardHome/main/White.txt",
+      "enabled": true
+    },
+    {
+      "name": "kuner",
+      "url": "https://raw.githubusercontent.com/Kuner-mw/DNS-Kuner/main/FilterRules/allowlist.txt",
+      "enabled": true
+    },
+    {
+      "name": "trli",
+      "url": "https://file-git.trli.club/file-hosts/allow/Domains",
+      "enabled": true
+    },
+    {
+      "name": "自建",
+      "url": "file:whitelist.txt",
+      "enabled": true,
+      "self": true
+    }
+  ],
+  "policy": {
+    "_comment": "自建黑名单优先：其域名本身 + 其所有父域，都会从 allow 列表剔除",
+    "self_block_wins": true,
+    "strip_allow_max_labels": null,
+    "_comment2": "strip_allow_max_labels 设为 2 会剔除所有两段整域放行（更激进）；null = 只按 self_block_wins 剔除",
+    "drop_undecidable_rules": true,
+    "_comment3": "丢弃 regex / 通配符 / 无法解析的规则（AGH 的 DNS 层对它们行为不可控）",
+    "report_short_allow": 2,
+    "_comment4": "报告里列出段数 <= 此值的 allow 条目，便于人工复核是否要加进 strip 名单"
+  },
+  "output": {
+    "block": "dist/block-merged.txt",
+    "allow": "dist/allow-merged.txt",
+    "report": "dist/report.md",
+    "allow_prefix": "@@",
+    "_comment": "allow 输出统一加 @@ 前缀，因此可以订阅到普通 filters 槽位 —— 这样它就变成可被 $important 覆盖的"
+  }
+}

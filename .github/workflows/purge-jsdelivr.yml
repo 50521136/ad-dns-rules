@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: 刷新 jsDelivr 缓存
         run: |
-          for f in blacklist.txt whitelist.txt; do
+          for f in blacklist.txt whitelist.txt dist/block-merged.txt dist/allow-merged.txt dist/report.md; do
             echo "purging $f"
             curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$f" | head -c 300
             echo

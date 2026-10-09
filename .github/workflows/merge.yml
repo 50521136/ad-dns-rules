@@ -1,0 +1,78 @@
+name: merge
+
+# 自动拉取 sources.json 里的所有订阅源，归一化语法、合并去重、按策略裁剪，
+# 产出 dist/ 下的合并列表并提交回仓库。
+on:
+  schedule:
+    # 每周一 02:00 CST（= 周日 18:00 UTC）
+    - cron: '0 18 * * 0'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'sources.json'
+      - 'tools/merge.py'
+      - 'tools/check_merged.py'
+      - '.github/workflows/merge.yml'
+
+# 允许 bot 把产物提交回来
+permissions:
+  contents: write
+
+concurrency:
+  group: merge
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: 拉取 + 归一化 + 合并去重
+        run: python3 tools/merge.py
+
+      - name: 校验产物（自建规则必须生效）
+        run: python3 tools/check_merged.py
+
+      - name: 提交产物
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "产物无变化，跳过提交"
+          else
+            git commit -m "chore(merge): 自动合并去重订阅源 ($(date -u +%Y-%m-%d))"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "已提交产物"
+          fi
+
+      - name: 刷新 jsDelivr 缓存
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          for f in dist/block-merged.txt dist/allow-merged.txt dist/report.md; do
+            echo "purge $f"
+            curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$f" | head -c 200
+            echo
+          done
+
+      - name: 报告摘要
+        if: always()
+        run: |
+          echo "### 合并结果" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f dist/report.md ]; then
+            sed -n '/^## 结果/,/^## 被剔除/p' dist/report.md | head -30 >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "未产出报告" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo '```' >> "$GITHUB_STEP_SUMMARY"

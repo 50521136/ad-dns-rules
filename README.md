@@ -4,6 +4,8 @@
 
 ## 订阅地址
 
+### 自建规则（手工维护，APK 逆向产出）
+
 **黑名单（拦截）**
 
 ```
@@ -16,7 +18,41 @@ https://raw.githubusercontent.com/50521136/ad-dns-rules/main/blacklist.txt
 https://raw.githubusercontent.com/50521136/ad-dns-rules/main/whitelist.txt
 ```
 
-两条都按「自定义过滤规则 / 订阅」加入即可，白名单的优先级高于黑名单。
+### 合并产物（GitHub Actions 自动生成）
+
+由 [`.github/workflows/merge.yml`](.github/workflows/merge.yml) 每周自动拉取
+[`sources.json`](sources.json) 里配置的上游订阅源，**归一化语法 → 合并 → 去重 → 按策略裁剪**：
+
+```
+https://raw.githubusercontent.com/50521136/ad-dns-rules/main/dist/block-merged.txt   # 约 55 万条
+https://raw.githubusercontent.com/50521136/ad-dns-rules/main/dist/allow-merged.txt   # 约 6600 条
+```
+
+用这两条可以**替换掉原来 9 个第三方订阅**（规则量从 126 万降到 55 万，去重 56%）。
+
+**导入方式：两条都按「添加黑名单」加入**——`allow-merged.txt` 已统一成 `@@||domain^`
+语法，所以它就是一个普通的例外列表，不需要占用 AGH 的「白名单」槽位。
+
+> **为什么要放在普通槽位而不是白名单槽位？**
+> AGH 的「白名单过滤器（whitelist_filters）」是独立引擎，命中就 return，**连 `$important`
+> 都压不过**（见 `internal/filtering/filtering.go` 的 `matchHost`）。放在普通槽位后，
+> `@@` 例外照常生效，但需要时可以用 `||domain^$important` 覆盖它——日志里点「拦截」按钮
+> 生成的正是这条规则。
+
+### 合并策略（`sources.json` 的 `policy`）
+
+| 策略 | 作用 |
+|---|---|
+| `self_block_wins` | `blacklist.txt` 里每个域名，都会把 allow 列表里**覆盖它自身及其所有父域**的条目剔除。保证自建规则一定生效 |
+| `strip_allow_max_labels` | 设为 `2` 会剔除所有两段整域放行（更激进）；默认 `null` |
+| `drop_undecidable_rules` | 丢弃通配符/正则/无法解析的规则（AGH 的 DNS 层对它们行为不可控） |
+
+每次跑完会产出 [`dist/report.md`](dist/report.md)（各源贡献、剔除明细、整域放行清单）
+和 [`dist/conflicts.txt`](dist/conflicts.txt)（同域既拦又放的完整清单）。
+
+**想把某个被放行的域名恢复拦截**：把它加进 `blacklist.txt`，下次跑流水线会自动剔除白名单侧
+对应条目——不用去改别人的订阅。
+
 
 > 国内网络访问 raw.githubusercontent.com 可能不通，可换 jsDelivr 镜像。
 > **注意用 `fastly.jsdelivr.net` 或 `gcore.jsdelivr.net`，不要用 `cdn.jsdelivr.net`** ——
