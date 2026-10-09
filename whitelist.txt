@@ -134,3 +134,30 @@
 @@||ns.oplus.com^
 @@||api-push.meizu.com^
 @@||hicloud.com^
+
+! ==========================================================================
+! [饿了么 / 淘宝闪购] 防止 ||elemecdn.com^ 这类父域规则把页面本体一起拦掉
+!
+! 机制（关键，别再踩）: AGH 除了过滤请求域名，还会对上游响应里的 CNAME 目标
+!   再做一次过滤 —— 见 internal/dnsforward/filter.go 的 filterDNSResponse()，
+!   它对 answer 里的 CNAME 目标和 A/AAAA 记录逐个 checkHostRules()。
+!   而 h5.ele.me / restapi.ele.me / perf.ele.me 的 CNAME 全都指向 *.elemecdn.com，
+!   所以「234」列表里的 ||elemecdn.com^ 会把 h5.ele.me 本尊一起拦掉
+!   （日志里表现为 h5.ele.me 的拦截规则是 ||elemecdn.com^，而不是 ele.me 的规则）。
+!   白名单对 CNAME 目标同样生效，所以放行 elemecdn.com 即可解开。
+!
+! 同理 tb.ele.me 的 CNAME 指向 *.alikunlun.com（阿里昆仑 CDN）。
+!
+! ⚠️ 不要图省事写 @@||ele.me^ —— 实测它会放行下面这些本该拦的广告埋点：
+!      adashx.ut.ele.me / v6-adashx.ut.ele.me / mobile-pubt.ele.me
+!      / web-ubt.ele.me / client-api.ele.me / newton-api.ele.me / grand.ele.me
+!    （这就是黑名单里 @@@ 那条 ele.me 埋点被作废的原因）
+! ==========================================================================
+@@||elemecdn.com^
+@@||h5.ele.me^
+@@||tb.ele.me^
+@@||restapi.ele.me^
+@@||waimai-guide.ele.me^
+! 阿里无痕验证（饿了么 H5 的风控组件 elecheck-h5-res 依赖）—— 拦了会领不到券
+@@||ynuf.aliapp.org^
+@@||cdn.ynuf.aliapp.org^
