@@ -2,19 +2,21 @@
 ! Description: 防止通用大规则集误杀 App 正常功能。AdGuard / AdGuard Home 的 @@ 例外语法。
 ! Homepage: https://github.com/50521136/ad-dns-rules
 ! 说明: 这里的规则优先级高于 blacklist.txt，也高于你订阅的其他过滤列表。
-!       导入方式与黑名单相同，作为一条独立的「自定义过滤规则 / 订阅」加入即可。
+!       导入方式与黑名单相同，作为一条独立的「自定义过滤列表 / 白名单订阅」加入即可。
 !
+! 【已整合】原来只存在于 AGHub 实例「自定义规则 user_rules」里的 13 条，已全部并入本文件
+!          （其中 5 条与下面的饿了么分节重复，按 $important 版本合并）。实例的 user_rules 已清空。
+! 【已去重】@@||父域^ 本身即匹配其所有子域（实测 zzz.coolapk.com 命中 @@||coolapk.com^），
+!          因此被父域覆盖的子域条目已删除，共 17 条。被删的条目在原位置留了注释备查。
+! 【保留 $important】沿用原自定义规则的写法：让例外能压过同样带 $important 的拦截规则。
+
 ! ==========================================================================
 ! [酷安 CoolApk] 自身业务域名 —— 自营广告和业务接口同域，整域放行保住 App 可用
+! 已去重: account./image./static./dl.coolapk.com → 被 @@||coolapk.com^ 覆盖
+!         dl-v2./dl-cdn.coolapkmarket.com        → 被 @@||coolapkmarket.com^ 覆盖
 ! ==========================================================================
 @@||coolapk.com^
 @@||coolapkmarket.com^
-@@||account.coolapk.com^
-@@||image.coolapk.com^
-@@||static.coolapk.com^
-@@||dl.coolapk.com^
-@@||dl-v2.coolapkmarket.com^
-@@||dl-cdn.coolapkmarket.com^
 
 ! ==========================================================================
 ! [酷安 CoolApk] QQ 登录 / 分享依赖的腾讯静态资源
@@ -24,12 +26,12 @@
 
 ! ==========================================================================
 ! [酷安 CoolApk] 推送 / 一键登录 / 风控 / 支付 —— 属于功能依赖，不是广告
+! 已去重: api.tpns.tencent.com → 被 @@||tpns.tencent.com^ 覆盖
+!         open.e.189.cn          → 被 @@||e.189.cn^ 覆盖
 ! ==========================================================================
 @@||tpns.tencent.com^
-@@||api.tpns.tencent.com^
 @@||cmpassport.com^
 @@||e.189.cn^
-@@||open.e.189.cn^
 @@||dun.163.com^
 @@||cstaticdun.126.net^
 @@||log.wechatpay.cn^
@@ -38,19 +40,19 @@
 ! ==========================================================================
 ! [微信 WeChat] 防止 anti-AD 等通用规则集误杀微信正常功能
 ! 这些域名被 anti-AD 收录了，但实测是微信的内容/DNS/传输依赖，不是广告
+! 已去重: dns./aedns./as./ilink./mp.weixin.qq.com → 被 @@||weixin.qq.com^ 覆盖
+!         long.open.weixin.qq.com → 被 @@||open.weixin.qq.com^ 覆盖
+! 说明: @@||weixin.qq.com^ 会把 ad.weixin.qq.com（个性化广告关闭入口）一起放行，
+!       而那个入口本来就属于「别拦」清单，方向一致。
 ! ==========================================================================
 @@||weixin.qq.com^
-@@||dns.weixin.qq.com^
 @@||dns.weixin.qq.com.cn^
-@@||aedns.weixin.qq.com^
-@@||as.weixin.qq.com^
 @@||qpic.cn^
 @@||wxs.qq.com^
 @@||wxsnsdy.tc.qq.com^
 @@||wxapp.tc.qq.com^
 @@||servicewechat.com^
 @@||teg.tencent-cloud.net^
-@@||ilink.weixin.qq.com^
 
 ! ==========================================================================
 ! [今日水印相机] 防止 anti-AD 误杀业务域名、定位与推送
@@ -80,6 +82,7 @@
 
 ! ==========================================================================
 ! [红果免费短剧] 防止 anti-AD 误杀红果的内容域名与资源热更新
+! 已去重: data.hicloud.com → 被 @@||hicloud.com^ 覆盖（见下面「通用放行」）
 ! ==========================================================================
 @@||fqnovel.com^
 @@||fqnovelpic.com^
@@ -104,7 +107,6 @@
 @@||tnc3-aliec2.bytedance.com^
 @@||tnc3-bjlgy.bytedance.com^
 @@||tnc3-alisc1.bytedance.com^
-@@||data.hicloud.com^
 @@||dt.dbankcloud.ru^
 @@||grs.dbankcloud.com^
 
@@ -118,10 +120,8 @@
 ! --- 阿里云（OSS / 推送）---
 @@||aliyuncs.com^
 ! --- 微信登录与分享 ---
-@@||open.weixin.qq.com^
-@@||long.open.weixin.qq.com^
+! 已去重: open./long.open./mp.weixin.qq.com → 被 @@||weixin.qq.com^ 覆盖
 @@||res.wx.qq.com^
-@@||mp.weixin.qq.com^
 ! --- QQ 登录与分享 ---
 @@||openmobile.qq.com^
 @@||cgi.connect.qq.com^
@@ -151,13 +151,32 @@
 ! ⚠️ 不要图省事写 @@||ele.me^ —— 实测它会放行下面这些本该拦的广告埋点：
 !      adashx.ut.ele.me / v6-adashx.ut.ele.me / mobile-pubt.ele.me
 !      / web-ubt.ele.me / client-api.ele.me / newton-api.ele.me / grand.ele.me
-!    （这就是黑名单里 @@@ 那条 ele.me 埋点被作废的原因）
+!    （黑名单里对应分节就是为此写的）
+! 已去重: cdn.ynuf.aliapp.org → 被 @@||ynuf.aliapp.org^ 覆盖
 ! ==========================================================================
-@@||elemecdn.com^
-@@||h5.ele.me^
-@@||tb.ele.me^
-@@||restapi.ele.me^
-@@||waimai-guide.ele.me^
+@@||elemecdn.com^$important
+@@||h5.ele.me^$important
+@@||tb.ele.me^$important
+@@||restapi.ele.me^$important
+@@||waimai-guide.ele.me^$important
 ! 阿里无痕验证（饿了么 H5 的风控组件 elecheck-h5-res 依赖）—— 拦了会领不到券
 @@||ynuf.aliapp.org^
-@@||cdn.ynuf.aliapp.org^
+
+! ==========================================================================
+! [整合] 原 AGHub 实例「自定义规则 user_rules」—— 已并入本文件统一维护
+! 这些是各 App 被通用规则集误杀的业务域名。$important 沿用原写法。
+! ==========================================================================
+! --- 腾讯手游 / QQ 游戏 ---
+@@||gzawx.smoba.qq.com^$important
+! --- 同花顺（行情 / 推送 / 静态资源）---
+@@||10jqka.com.cn^
+@@||push.hexin.cn^$important
+@@||s.thsi.cn^$important
+! --- 平安健康 ---
+@@||mcore.health.pingan.com^$important
+! --- 蔚来（vemarsdev）---
+@@||zeus-api.vemarsdev.com^$important
+! --- 百货商城 ---
+@@||obs.3688baihuo.com^$important
+! --- 字节 CT 上报（属功能依赖，不是广告）---
+@@||ctobsnssdk.com^

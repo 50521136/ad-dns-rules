@@ -17,7 +17,8 @@
 ||ad.toutiao.com^
 ||phoniex.toutiao.com^
 ||toutiaopage.com^
-||ctobsnssdk.com^
+! ||ctobsnssdk.com^   已注释：字节通用 SDK 域名（非纯广告），实测拦了会坏功能，
+!                      已在 whitelist.txt 整合分节放行。例外优先级更高，留着这条等于失效，故注释掉。
 ||applog.snssdk.com^
 ||rtapplog.snssdk.com^
 ||rtlog.snssdk.com^

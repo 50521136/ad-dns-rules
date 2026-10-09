@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-RULE_RE = re.compile(r"^(@@)?\|\|([a-z0-9][a-z0-9.-]*)\^$")
+RULE_RE = re.compile(r"^(@@)?\|\|([a-z0-9][a-z0-9.-]*)\^(\$[a-z0-9_,.=~-]+)?$")
 DOMAIN_RE = re.compile(r"^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)+$")
 
 
