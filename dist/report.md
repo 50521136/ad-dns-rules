@@ -5,14 +5,12 @@
 
 | 类型 | 源 | 原始行 | 有效 | 其中 hosts | 其中裸域名 | 去重后 | 通配符跳过 | 丢弃 |
 |---|---|---|---|---|---|---|---|---|
-| block | 217heidai | 229420 | 229409 | 0 | 0 | 229382 | 0 | 1 |
-| block | 234 | 479216 | 477836 | 0 | 0 | 477836 | 1235 | 140 |
-| block | menghui | 288360 | 287666 | 82 | 0 | 287698 | 400 | 207 |
-| block | 扶风 | 34153 | 20739 | 11412 | 0 | 24109 | 856 | 597 |
-| block | 海哥 | 13042 | 12825 | 0 | 0 | 12824 | 165 | 36 |
+| block | 217heidai | 229690 | 229679 | 0 | 0 | 229652 | 0 | 1 |
+| block | menghui | 288745 | 288053 | 80 | 0 | 288085 | 400 | 207 |
+| block | 扶风 | 34039 | 20663 | 11412 | 0 | 24039 | 818 | 597 |
+| block | 海哥 | 13136 | 12920 | 0 | 0 | 12919 | 165 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 292 | 82 | 0 | 0 | 82 | 0 | 0 |
-| allow | 234 | 6269 | 6076 | 0 | 0 | 6076 | 189 | 0 |
 | allow | menghui | 457 | 440 | 0 | 0 | 440 | 10 | 2 |
 | allow | kuner | 80 | 37 | 0 | 0 | 37 | 11 | 1 |
 | allow | trli | 1431 | 0 | 0 | 1409 | 1404 | 10 | 0 |
@@ -20,26 +18,25 @@
 
 ## 结果
 
-- 黑名单输出：**556395** 条
-- 白名单输出：**6472** 条（已统一 `@@||domain^` 语法）
+- 黑名单输出：**347799** 条
+- 白名单输出：**1892** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**82** 个
-- 因自建黑名单优先而剔除的放行条目：**16** 条
-- 同域既拦又放（保留放行侧）：**3731** 条
+- 因自建黑名单优先而剔除的放行条目：**10** 条
+- 同域既拦又放（保留放行侧）：**1047** 条
 
 ## 解析备注
 
 - `block/217heidai` 有 1 条无法解析被丢弃，样例：`||fb_servpub-a.akamaihd.net^`
-- `block/234` 有 1235 条含通配符/正则的规则被跳过，样例：`||?adspot_.^`, `||?local_ga_js=.^`, `/(https?:\/\/)213\.32\.115\..{100,}/`, `/(https?:\/\/)217\.182\.11\..{100,}/`
-- `block/234` 有 140 条无法解析被丢弃，样例：`||09_19.supfree.net^`, `||ad-cdn_core.cctv.com^`, `||ad_core.cctv.com^`, `||ad_m.cctv.com^`
+- ⚠️ **block/234** 下载失败：`下载失败 https://www.23-4.cn/rules/merged-block.txt: <urlopen error [Errno 104] Connection reset by peer>`
 - `block/menghui` 有 400 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
 - `block/menghui` 有 207 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
-- `block/扶风` 有 856 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
+- `block/扶风` 有 818 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
 - `block/扶风` 有 597 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
 - `block/海哥` 有 165 条含通配符/正则的规则被跳过，样例：`||*-99wanyou-com-idvkrgg.qiniudns.co`, `||*-default.ixigua.com^`, `||*-hl.toutiaoapi.com^`, `||*-jor0b302fdhgwnccw8g.com^`
 - `block/海哥` 有 36 条无法解析被丢弃，样例：`||/7gq78s4ltrea/^`, `||0019a^`, `||216.239.35.0/24^`, `||295cdn^`
 - `block/暗雅日记` 有 25 条含通配符/正则的规则被跳过，样例：`||ad*.idcyz.hb1.kwaidc.com^`, `||ads*-normal-hl.zijieapi.com^`, `||ads*-normal-lf.zijieapi.com^`, `||ads*-normal-lq.zijieapi.com^`
 - `block/暗雅日记` 有 1 条无法解析被丢弃，样例：`||api.zhihu.com/ad-style-service`
-- `allow/234` 有 189 条含通配符/正则的规则被跳过，样例：`||*.*.szbdyd.com^`, `||*.4399.com^`, `||*.5054399.com^`, `||*.7k7k.com^`
+- ⚠️ **allow/234** 下载失败：`下载失败 https://www.23-4.cn/rules/merged-allow.txt: <urlopen error [Errno 104] Connection reset by peer>`
 - `allow/menghui` 有 10 条含通配符/正则的规则被跳过，样例：`@@||api-v*.trbo.com^`, `@@||bcicl.*.evergage.com^`, `@@||brm-core-*.brsrvr.com^`, `@@||cdn.us*.exponea.com^`
 - `allow/menghui` 有 2 条无法解析被丢弃，样例：`@@-ds.metric.gstatic.com^`, `@@||白名单仅用于测试.com^`
 - `allow/kuner` 有 11 条含通配符/正则的规则被跳过，样例：`@@||*m*.360buyimg.com^`, `@@||storage*360buyimg.com^`, `@@||p*reading*sign.fqnovelpic.com^`, `@@||api*normal*fqnovel.com^`
@@ -52,330 +49,229 @@
 |---|---|
 | `aegis.qq.com` | aegis.qq.com |
 | `alibaba.com` | fourier.alibaba.com |
-| `anythinktech.com` | anythinktech.com |
 | `app-measurement.com` | app-measurement.com |
 | `baidu.com` | union.baidu.com |
 | `bytedance.com` | scc.bytedance.com |
 | `e.kuaishou.com` | e.kuaishou.com |
-| `gdtimg.com` | gdtimg.com |
-| `google-analytics.com` | google-analytics.com |
-| `googlesyndication.com` | googlesyndication.com |
-| `h-adashx.ut.taobao.com` | h-adashx.ut.taobao.com |
 | `mon.zijieapi.com` | mon.zijieapi.com |
 | `qq.com` | aegis.qq.com, appchannel.html5.qq.com, btrace.qq.com, e.qq.com, gdt.qq.com, masdk.3g.qq.com, pingjs.qq.com, pmir.3g.qq.com, tdid.m.qq.com, trace.qq.com, union.eff.qq.com |
 | `snssdk.com` | applog.snssdk.com, log.snssdk.com, rtapplog.snssdk.com, rtlog.snssdk.com |
 | `taobao.com` | fourier.taobao.com, h-adashx.ut.taobao.com |
-| `tdid.m.qq.com` | tdid.m.qq.com |
 
 ## 剩余整域放行（段数 <= 2，建议人工复核）
 
-共 1170 条：
+共 174 条：
 
-- `0.com`
 - `000714.xyz`
 - `123pan.com`
 - `126.net`
 - `163.com`
-- `17u.cn`
-- `18comic.org`
-- `18comic.vip`
-- `1drv.com`
-- `1drv.ms`
-- `1kinobig.ru`
-- `1sapp.com`
-- `22.do`
-- `321mh.com`
 - `360.cn`
-- `360buyimg.com`
-- `360kuai.com`
 - `360safe.com`
-- `3975.com`
-- `40017.cn`
-- `4ix.com`
-- `4shared.com`
-- `56.com`
-- `7x24s.com`
-- `7zap.com`
-- `88cdn.com`
-- `8pecxstudios.com`
-- `91haoka.cn`
 - `a-msedge.net`
-- `abuelos.com`
-- `ac24horas.com`
-- `acg02.cc`
-- `acgnet.cn`
-- `acompli.net`
-- `actuabd.com`
-- `ad-gone.com`
-- `ad.jp`
-- `ad.nl`
-- `adaway.org`
-- `adnmb3.com`
-- `ads.finance`
-- `adtidy.org`
-- `aeotec.com`
-- `afdian.com`
 - `afdian.net`
 - `afi-b.com`
-- `afraid.org`
-- `agrd.io`
-- `aihuishou.com`
-- `airydress.com`
-- `aizhan.com`
-- `ak.sv`
-- `akadns.net`
 - `akamai.net`
 - `akamaiedge.net`
-- `akamaihd.net`
-- `akamaitechnologies.com`
-- `akamaized.net`
-- `al-aqsanews.com`
 - `aliapp.org`
 - `alibabadns.com`
 - `alicdn.com`
 - `alidns.com`
-- `aliexpress.com`
 - `alipay.com`
-- `alistgo.com`
 - `aliyun.com`
 - `aliyuncs.com`
-- `allrecipes.com`
-- `altervista.org`
-- `amazon.com`
-- `amazonaws.com`
-- `amazonforum.com`
-- `angelfire.com`
-- `animerep.com`
-- `aniview.com`
-- `annas-archive.org`
-- `apartments.com`
 - `apkmirror.com`
-- `app.link`
-- `appboy-images.com`
-- `appcenter.ms`
-- `apple-cloudkit.com`
 - `apple-dns.net`
-- `apple-livephotoskit.com`
-- `apple-mapkit.com`
-- `apple.com`
-- `appleiphonecell.com`
-- `apzones.com`
-- `archive.fo`
-- `archive.org`
-- `arenascan.com`
-- `arkoselabs.com`
-- `aspnetcdn.com`
-- `atomz.com`
-- `auditude.com`
-- `auslogics.com`
-- `autoscout24.com`
-- `avgle.com`
 - `awin1.com`
-- `azureedge.net`
 - `b23.tv`
-- `b3log.org`
-- `b3logfile.com`
-- `backblazeb2.com`
-- `bad.news`
 - `baidupcs.com`
-- `baixing.com`
-- `bamgrid.com`
-- `banggood.com`
-- `bankofamerica.com`
-- `bccard.com`
-- `bcelive.com`
 - `bcy.net`
-- `bdsmtest.org`
-- `bdsmtv.cc`
-- `bestbuy.com`
-- `bestgore.fun`
-- `bestvpnrating.com`
-- `bet365.com`
-- `bethesda.net`
-- `bidobido.xyz`
-- `binarypiano.com`
 - `bing.com`
-- `bing.net`
-- `bit.do`
-- `bit.ly`
-- `bitbucket.org`
-- `bitly.com`
-- `bitsumactivationserver.com`
-- `biz.ua`
-- `blackcircles.ca`
-- `blizzard.com`
-- `bluehost.com`
 - `blueskyxn.com`
-- `bmap6.cn`
-- `bnc.lt`
-- `bongacams.com`
-- `bonuscloud.io`
-- `bootcdn.cn`
 - `bootcdn.net`
-- `boxcryptor.com`
-- `brightcove.com`
-- `brightcove.net`
-- `britannica.com`
-- `browser-intake-datadoghq.eu`
-- `budgetbankers.com`
-- `bufferapp.com`
-- `bulbagarden.net`
-- `burnermail.io`
 - `bytednsdoc.com`
 - `bytegecko.com`
 - `byteimg.com`
-- `cafe24.com`
-- `cainiao.com`
 - `camscanner.com`
-- `capebretonpost.com`
-- `capitalone.com`
-- `captcha-display.com`
-- `cbox.ws`
-- `cbsi.com`
-- `ccmbg.com`
-- `cd4o.com`
-- `cdn-apple.com`
 - `cdn-go.cn`
-- `cdn-noc.net`
-- `cdnfinder.xyz`
-- `cdninstagram.com`
-- `cdnjs.com`
-- `cec.ro`
-- `cedexis.net`
-- `charterbankwa.com`
-- `chase.com`
 - `chatglm.cn`
-- `cheatography.com`
-- `chelpus.com`
-- `chickenkiller.com`
-- `chipotle.com`
-- `cibntv.net`
-- `cinsscore.com`
-- `clck.ru`
-- `cli.im`
-- `click-trk.com`
-- `clickdimensions.com`
-- `clickfunnels.com`
-- `clickhouse.com`
-- `clips4sale.com`
-- `cloudflare-dns.com`
-- `cloudflare.com`
-- `cloudflareinsights.com`
-- `cloudflareworkers.com`
-- `cloudfront.net`
-- `cloudns.cl`
 - `cmpassport.com`
 - `cnzz.com`
-- `connatix.com`
-- `controleng.com`
-- `convertertogenerator.com`
-- `conviva.com`
 - `coolapk.com`
-- …（还有 970 条）
+- `coolapkmarket.com`
+- `ctobsnssdk.com`
+- `cubox.pro`
+- `cupfox.app`
+- `cutcaptcha.com`
+- `cz88.net`
+- `dns.google`
+- `dns.pub`
+- `dnscheck.tools`
+- `doh.pub`
+- `dot.pub`
+- `douban.com`
+- `dpurl.cn`
+- `drvsky.com`
+- `duckduckgo.com`
+- `dynamic-dns.net`
+- `dynv6.com`
+- `elemecdn.com`
+- `envato.market`
+- `example.org`
+- `facebook.com`
+- `flydigi.com`
+- `fqnovel.com`
+- `fqnovelpic.com`
+- `fqnovelstatic.com`
+- `gepush.com`
+- `getquicker.net`
+- `getui.com`
+- `getui.net`
+- `ghproxy.com`
+- `giscus.app`
+- `gitcode.net`
+- `github.com`
+- `gov.cn`
+- `greasyfork.org`
+- `gtimg.cn`
+- `haiwaikan.com`
+- `hcfy.ai`
+- `heytapdownload.com`
+- `hicloud.com`
+- `hidive.com`
+- `hitokoto.cn`
+- `href.li`
+- `iana.org`
+- `ibytedapm.com`
+- `icloud.com`
+- `idqqimg.com`
+- `igexin.com`
+- `intel.com`
+- `ip.sb`
+- `ip111.cn`
+- `ip138.com`
+- `ipify.org`
+- `ipinfo.io`
+- `ipip.net`
+- `japaneseasmr.com`
+- `jcloud-cdn.com`
+- `jd.com`
+- `jihulab.com`
+- `jomodns.com`
+- `leechers-paradise.org`
+- `limestart.cn`
+- `linka.page`
+- `logentries.com`
+- `maimemo.com`
+- `maimemostatus.com`
+- `mega.nz`
+- `meiqia.com`
+- `meituan.net`
+- `metaso.cn`
+- `mi.com`
+- `microsoft.com`
+- `microsoftapp.net`
+- `miui.com`
+- `miwifi.com`
+- `mt2.cn`
+- `musescore.org`
+- `myqcloud.com`
+- `myquark.cn`
+- `mzstatic.com`
+- `netease.com`
+- `novelquickapp.com`
+- `oray.com`
+- `outlook.com`
+- `pgpartner.com`
+- `pixso.cn`
+- `pstatp.com`
+- `qcloud.com`
+- `qishui.com`
+- `qpic.cn`
+- `remembering.ca`
+- `rethinkdns.com`
+- `servicewechat.com`
+- `shifen.com`
+- `shuzilm.cn`
+- `sinaimg.cn`
+- `singapore.com`
+- `skype.com`
+- `smartplg.com`
+- `so.com`
+- `sogou.com`
+- `spartaindependent.com`
+- `src.top`
+- `stackoverflow.com`
+- `steamcommunity.com`
+- `suo.im`
+- `syncthing.net`
+- `t.cn`
+- `tanx.com`
+- `tb.cn`
+- `tdnsdp1.cn`
+- `tdnsvod1.cn`
+- `telegra.ph`
+- `tencent-cloud.com`
+- `tencent-cloud.net`
+- `tencent.com`
+- `tenpay.com`
+- `termux.net`
+- `tlaol.com`
+- `uc.cn`
+- `ufileos.com`
+- `used.ca`
+- `visa.cn`
+- `warhammer40000.com`
+- `weatheroffer.com`
+- `weibo.cn`
+- `weibo.com`
+- `wht.im`
+- `wikipedia.org`
+- `wpengapp.com`
+- `wpsdns.com`
+- `wpsmail.net`
+- `wsglb0.com`
+- `xhslink.com`
+- `ydns.io`
+- `youtube.com`
+- `ys168.com`
+- `ysepan.com`
 
 ## 同域冲突
 
-共 3731 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
+共 1047 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
 
 想把其中某几个恢复拦截：把它们加进 `blacklist.txt`，下次跑流水线会自动剔除白名单侧对应条目。
 完整清单见 `dist/conflicts.txt`。
 
 - `000714.xyz`
-- `17u.cn`
-- `18comic.org`
-- `18comic.vip`
-- `1kinobig.ru`
-- `1sapp.com`
-- `1tian.kuaishou.com`
-- `2.android.pool.ntp.org`
-- `22.do`
 - `316.coolapk1s.com`
 - `360.cn`
-- `360buyimg.com`
-- `360kuai.com`
-- `3975.com`
-- `39d0825d09f05.cdn.sohucs.com`
-- `3d-platform-pro.obs.cn-south-1.myhuaweicloud.com`
-- `3g.163.com`
 - `3g.ali213.net`
-- `40017.cn`
-- `48609.activity-42.m.duiba.com.cn`
 - `5471782.fls.doubleclick.net`
 - `79423.analytics.edgekey.net`
-- `7x24s.com`
-- `91haoka.cn`
-- `96956.com.cn`
-- `a.9game.cn`
 - `a.adwolf.ru`
-- `a.game.163.com`
-- `a.klaviyo.com`
 - `a.sellpoint.net`
 - `a0.app.xiaomi.com`
-- `a1.mzstatic.com`
-- `a1.qpic.cn`
-- `a2.mzstatic.com`
-- `a3.mzstatic.com`
-- `a4.mzstatic.com`
-- `a5.mzstatic.com`
-- `a6.mzstatic.com`
-- `a7.mzstatic.com`
-- `a8.mzstatic.com`
-- `a8onlineshop.trendmicro.co.jp`
-- `aa.tweakers.nl`
-- `aaid.umeng.com`
-- `aan.amazon.com`
 - `aapl-edge0.qtlcdn.com`
 - `aax-fe.amazon.co.jp`
-- `ab.tweakers.nl`
-- `about.gitlab.cn`
-- `about.gitlab.com`
-- `abre-videos.cdn1122.com`
-- `abs-0.twimg.com`
-- `abs.twimg.com`
 - `abtest-ch.snssdk.com`
 - `abtest3-misc-lf.zijieapi.com`
-- `abtestvm.bytedance.com`
-- `ac.dun.163yun.com`
 - `ac.ebis.ne.jp`
 - `access.open.uc.cn`
-- `access1.tpns.tencent.com`
-- `account.agiso.com`
-- `account.dianping.com`
-- `account.oneplus.com`
-- `account.oppo.com`
-- `account.qzhua.net`
-- `account.realme.com`
-- `account.vivo.com`
-- `account.wps.cn`
-- `account.xfinfr.com`
 - `account.xiaomi.com`
-- `account.xunfei.cn`
-- `account.youku.com`
-- `accountapi.dianping.com`
 - `accounts.google.com`
-- `accscdn.m.taobao.com`
-- `accscdn4public.m.taobao.com`
-- `acg02.cc`
 - `acs-m.daraz.com.bd`
 - `acs-m.daraz.pk`
-- `acs.m.goofish.com`
 - `acs.m.taobao.com`
 - `acs.youku.com`
 - `acs4baichuan.m.taobao.com`
-- `acs4public.m.taobao.com`
 - `acstatic-dun.126.net`
 - `act-webstatic.hoyoverse.com`
 - `act.hoyoverse.com`
 - `act.vip.iqiyi.com`
-- `act.zhuanzhuan.com`
 - `action.metaffiliation.com`
-- `activity.browser.intl.miui.com`
 - `activity.hdslb.com`
-- `activity.huaweicloud.com`
-- `activity.tuiapple.com`
-- `activity.youku.com`
-- `acts.qidian.com`
-- `ad-experience.bytedance.com`
 - `ad-log-upload.mihoyo.com`
 - `ad.10010.com`
 - `ad.abchina.com`
@@ -383,34 +279,15 @@
 - `ad.ourgame.com`
 - `ad.tencentmusic.com`
 - `adash-emas.cn-hangzhou.aliyuncs.com`
-- `adashx.ut.dingtalk.com`
 - `adcdn.pingan.com`
 - `adcdn.tencentmusic.com`
 - `adclick.tencentmusic.com`
 - `adexpo.tencentmusic.com`
-- `adidasapp.api.adidas.com.cn`
-- `adm.10jqka.com.cn`
-- `admin-oss-xlvip.a.88cdn.com`
 - `admin.dable.io`
 - `admin.mailchimp.com`
-- `adnmb3.com`
-- `ads.95516.com`
-- `ads.cdn.tvb.com`
-- `ads.google.com`
-- `ads.microsoft.com`
-- `ads.pinterest.com`
-- `ads.snapchat.com`
-- `ads.spotify.com`
 - `ads.tdbank.com`
-- `ads.twitter.com`
-- `ads.vk.com`
-- `ads.vk.ru`
-- `ads.x.com`
-- `adserviceretry.kugou.com`
 - `adsmind.gdtimg.com`
 - `adstats.tencentmusic.com`
-- `adv.ccb.com`
-- `adv.sec.miui.com`
 - `advert.kf5.com`
 - `advertise.baicizhan.com`
 - `adx-bj-req.anythinktech.com`
@@ -418,16 +295,103 @@
 - `adx.anythinktech.com`
 - `ae.bdstatic.com`
 - `ae01.alicdn.com`
-- `aedns.weixin.qq.com`
-- `afdian.com`
 - `afi-b.com`
-- `ai-cdn.duba.net`
-- `ai.yimg.jp`
-- `aider-res.meizu.com`
-- `aider.meizu.com`
-- `aihuishou.com`
-- `aikanlive.miguvideo.com`
-- `aikanvod.miguvideo.com`
-- `aisite.wejianzhan.com`
-- `aisubtitle.hdslb.com`
-- …（还有 3581 条，见 conflicts.txt）
+- `aks.jdpay.com`
+- `ali-gamezone.static.yximgs.com`
+- `ali-ky.static.yximgs.com`
+- `ali-stats.jpush.cn`
+- `ali.static.yximgs.com`
+- `ali2.a.kwimgs.com`
+- `ali2.a.yximgs.com`
+- `alt1-mtalk.google.com`
+- `alt2-mtalk.google.com`
+- `alt3-mtalk.google.com`
+- `alt4-mtalk.google.com`
+- `alt5-mtalk.google.com`
+- `alt6-mtalk.google.com`
+- `alt7-mtalk.google.com`
+- `alt8-mtalk.google.com`
+- `amdc.alipay.com`
+- `amdc.m.taobao.com`
+- `amp-api-edge.apps.apple.com`
+- `ams.lenovomm.com`
+- `analytics-api-01.smzdm.com`
+- `analytics.95516.com`
+- `analytics.95516.com.wscdns.com`
+- `analytics.amplitude.com`
+- `analytics.githubassets.com`
+- `analytics.map.qq.com`
+- `analytics.meituan.net`
+- `analytics.umetrip.com`
+- `android-artworks.25pp.com`
+- `android.bugly.qq.com`
+- `ant.pingan.com.cn`
+- `anwb.webpower.eu`
+- `ap01.records.in.treasuredata.com`
+- `ap6.ssl.msdk.qq.com`
+- `apd-vodp2plogin.teg.tencent-cloud.net`
+- `api-access.pangolin-sdk-toutiao-b.com`
+- `api-access.pangolin-sdk-toutiao.com`
+- `api-access.pangolin-sdk-toutiao1.com`
+- `api-cn.cdo.heytapmobi.com`
+- `api-cn.store.heytapmobi.com`
+- `api-cn.theme.heytapmobi.com`
+- `api-ks.wtzw.com`
+- `api-push.meizu.com`
+- `api-sc.wtzw.com`
+- `api-shoulei-ssl.xunlei.com`
+- `api-unionid.meituan.com`
+- `api.account.xiaomi.com`
+- `api.ad.xiaomi.com`
+- `api.ads.tvb.com`
+- `api.cloud.huawei.com`
+- `api.comm.miui.com`
+- `api.coolapk.com`
+- `api.developer.xiaomi.com`
+- `api.device.xiaomi.net`
+- `api.docodoco.jp`
+- `api.e.kuaishou.com`
+- `api.g.micloud.xiaomi.net`
+- `api.github.com`
+- `api.io.mi.com`
+- `api.iplay.163.com`
+- `api.jr.mi.com`
+- `api.karte.io`
+- `api.kingdata.ksyun.com`
+- `api.kuaishouzt.com`
+- `api.live.bilibili.com`
+- `api.map.baidu.com`
+- `api.micloud.xiaomi.net`
+- `api.miwifi.com`
+- `api.neixin.cn`
+- `api.open.oppomobile.com`
+- `api.revenuecat.com`
+- `api.sec.miui.com`
+- `api.smoot.apple.com`
+- `api.tw06.xlmc.sec.miui.com`
+- `api.union.vip.com`
+- `api.vip.miui.com`
+- `api.xunyou.mobi`
+- `api.zhuti.xiaomi.com`
+- `api2.e.kuaishou.com`
+- `api5-normal-lf.fqnovel.com`
+- `apihb6.ksapisrv.com`
+- `apijs.gifshow.com`
+- `apijsv6.gifshow.com`
+- `apijsv6.ksapisrv.com`
+- `apikey.map.qq.com`
+- `apisnd.heytapmobi.com`
+- `apissl.gifshow.com`
+- `apissl.ksapisrv.com`
+- `apiv4-iyes.youku.com`
+- `app-advertise.zhihuishu.com`
+- `app-monitor.ele.me`
+- `app.adjust.com`
+- `app.appsflyer.com`
+- `app.bilibili.com`
+- `app.home.360.cn`
+- `app.market.xiaomi.com`
+- `app.toutiao.com`
+- `appcloud2.in.zhihu.com`
+- `appconf.heytapdownload.com`
+- …（还有 897 条，见 conflicts.txt）
