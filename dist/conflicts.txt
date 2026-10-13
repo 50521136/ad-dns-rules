@@ -801,7 +801,6 @@ secureimage.securedataimages.com
 sedge.nfl.com
 self.events.data.microsoft.com
 sensors.cloud.tencent.com
-sentry.chaoxing.com
 sentry.d.xiaomi.net
 settings-win.data.microsoft.com
 sf0.market.xiaomi.com
