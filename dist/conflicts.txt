@@ -757,6 +757,7 @@ recommender.scarabresearch.com
 redir.ownpage.fr
 redir.tradedoubler.com
 redirect.appmetrica.yandex.com
+redirect.disqus.com
 ref.rbauction.com
 refer.discover.com
 remembering.ca
