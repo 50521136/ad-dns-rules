@@ -5,24 +5,24 @@
 
 | 类型 | 源 | 原始行 | 有效 | 其中 hosts | 其中裸域名 | 去重后 | 通配符跳过 | 丢弃 |
 |---|---|---|---|---|---|---|---|---|
-| block | 217heidai | 236122 | 236111 | 0 | 0 | 236084 | 0 | 1 |
-| block | menghui | 293636 | 292958 | 68 | 0 | 292989 | 399 | 206 |
-| block | 扶风 | 33608 | 20789 | 10900 | 0 | 24161 | 841 | 527 |
+| block | 217heidai | 237230 | 237219 | 0 | 0 | 237192 | 0 | 1 |
+| block | menghui | 293592 | 292905 | 77 | 0 | 292936 | 399 | 206 |
+| block | 扶风 | 33538 | 20741 | 10900 | 0 | 24115 | 818 | 528 |
 | block | 海哥 | 13135 | 12919 | 0 | 0 | 12918 | 165 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 292 | 82 | 0 | 0 | 82 | 0 | 0 |
-| allow | menghui | 458 | 441 | 0 | 0 | 441 | 10 | 2 |
+| allow | menghui | 459 | 442 | 0 | 0 | 442 | 10 | 2 |
 | allow | kuner | 80 | 37 | 0 | 0 | 37 | 11 | 1 |
 | allow | trli | 1431 | 0 | 0 | 1409 | 1404 | 10 | 0 |
 | allow | 自建 | 182 | 93 | 0 | 0 | 93 | 0 | 0 |
 
 ## 结果
 
-- 黑名单输出：**355951** 条
-- 白名单输出：**1893** 条（已统一 `@@||domain^` 语法）
+- 黑名单输出：**356782** 条
+- 白名单输出：**1894** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**82** 个
 - 因自建黑名单优先而剔除的放行条目：**10** 条
-- 同域既拦又放（保留放行侧）：**1047** 条
+- 同域既拦又放（保留放行侧）：**1048** 条
 
 ## 解析备注
 
@@ -30,8 +30,8 @@
 - ⚠️ **block/234** 下载失败：`下载失败 https://www.23-4.cn/rules/merged-block.txt: <urlopen error [Errno 104] Connection reset by peer>`
 - `block/menghui` 有 399 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
 - `block/menghui` 有 206 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
-- `block/扶风` 有 841 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
-- `block/扶风` 有 527 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
+- `block/扶风` 有 818 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
+- `block/扶风` 有 528 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
 - `block/海哥` 有 165 条含通配符/正则的规则被跳过，样例：`||*-99wanyou-com-idvkrgg.qiniudns.co`, `||*-default.ixigua.com^`, `||*-hl.toutiaoapi.com^`, `||*-jor0b302fdhgwnccw8g.com^`
 - `block/海哥` 有 36 条无法解析被丢弃，样例：`||/7gq78s4ltrea/^`, `||0019a^`, `||216.239.35.0/24^`, `||295cdn^`
 - `block/暗雅日记` 有 25 条含通配符/正则的规则被跳过，样例：`||ad*.idcyz.hb1.kwaidc.com^`, `||ads*-normal-hl.zijieapi.com^`, `||ads*-normal-lf.zijieapi.com^`, `||ads*-normal-lq.zijieapi.com^`
@@ -239,7 +239,7 @@
 
 ## 同域冲突
 
-共 1047 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
+共 1048 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
 
 想把其中某几个恢复拦截：把它们加进 `blacklist.txt`，下次跑流水线会自动剔除白名单侧对应条目。
 完整清单见 `dist/conflicts.txt`。
@@ -394,4 +394,4 @@
 - `app.toutiao.com`
 - `appcloud2.in.zhihu.com`
 - `appconf.heytapdownload.com`
-- …（还有 897 条，见 conflicts.txt）
+- …（还有 898 条，见 conflicts.txt）

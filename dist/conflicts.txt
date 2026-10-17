@@ -729,6 +729,7 @@ pub.idqqimg.com
 public-cis.exponea.com
 public.gdtimg.com
 publish-pic-cpu.baidu.com
+puma.112.2o7.net
 punch.p2p.qq.com
 puser.funshion.com
 push.hexin.cn

@@ -1,6 +1,6 @@
 ! Title: ad-dns-rules 合并白名单（@@ 例外，可订阅到普通过滤器槽位）
-! Rules: 1893
-! Generated: 2026-10-16 20:52:05 UTC
+! Rules: 1894
+! Generated: 2026-10-17 20:26:15 UTC
 ! Repo: https://github.com/50521136/ad-dns-rules
 !
 @@||000714.xyz^
@@ -1329,6 +1329,7 @@
 @@||pull-hs-f5.flive.douyincdn.com.c.volcfcdndvs.com^
 @@||pull-hs-spe-f5.douyincdn.com.c.volcfcdndvs.com^
 @@||pull-rtmp-l26-cny.douyincdn.com.c.cdnhwc3.com^
+@@||puma.112.2o7.net^
 @@||punch.p2p.qq.com^
 @@||purchase.mp.microsoft.com^
 @@||puser.funshion.com^
