@@ -5,9 +5,9 @@
 
 | 类型 | 源 | 原始行 | 有效 | 其中 hosts | 其中裸域名 | 去重后 | 通配符跳过 | 丢弃 |
 |---|---|---|---|---|---|---|---|---|
-| block | 217heidai | 237230 | 237219 | 0 | 0 | 237192 | 0 | 1 |
-| block | menghui | 293592 | 292905 | 77 | 0 | 292936 | 399 | 206 |
-| block | 扶风 | 33538 | 20741 | 10900 | 0 | 24115 | 818 | 528 |
+| block | 217heidai | 232544 | 232533 | 0 | 0 | 232509 | 0 | 1 |
+| block | menghui | 291780 | 291091 | 79 | 0 | 291122 | 399 | 206 |
+| block | 扶风 | 33608 | 20789 | 10900 | 0 | 24161 | 841 | 527 |
 | block | 海哥 | 13135 | 12919 | 0 | 0 | 12918 | 165 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 292 | 82 | 0 | 0 | 82 | 0 | 0 |
@@ -18,7 +18,7 @@
 
 ## 结果
 
-- 黑名单输出：**356782** 条
+- 黑名单输出：**356690** 条
 - 白名单输出：**1894** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**82** 个
 - 因自建黑名单优先而剔除的放行条目：**10** 条
@@ -30,8 +30,8 @@
 - ⚠️ **block/234** 下载失败：`下载失败 https://www.23-4.cn/rules/merged-block.txt: <urlopen error [Errno 104] Connection reset by peer>`
 - `block/menghui` 有 399 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
 - `block/menghui` 有 206 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
-- `block/扶风` 有 818 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
-- `block/扶风` 有 528 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
+- `block/扶风` 有 841 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
+- `block/扶风` 有 527 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
 - `block/海哥` 有 165 条含通配符/正则的规则被跳过，样例：`||*-99wanyou-com-idvkrgg.qiniudns.co`, `||*-default.ixigua.com^`, `||*-hl.toutiaoapi.com^`, `||*-jor0b302fdhgwnccw8g.com^`
 - `block/海哥` 有 36 条无法解析被丢弃，样例：`||/7gq78s4ltrea/^`, `||0019a^`, `||216.239.35.0/24^`, `||295cdn^`
 - `block/暗雅日记` 有 25 条含通配符/正则的规则被跳过，样例：`||ad*.idcyz.hb1.kwaidc.com^`, `||ads*-normal-hl.zijieapi.com^`, `||ads*-normal-lf.zijieapi.com^`, `||ads*-normal-lq.zijieapi.com^`
