@@ -272,7 +272,6 @@ cs.silverpop.com
 cstaticdun.126.net
 ctldl.windowsupdate.com
 ctobsnssdk.com
-cupfox.app
 cutcaptcha.com
 d.gdt.qq.com
 d.kugou.com
@@ -355,7 +354,6 @@ f4.market.xiaomi.com
 f6.market.xiaomi.com
 f8.market.xiaomi.com
 facebook.com
-fanyiegg.youdao.com
 fastcdn.hoyoverse.com
 fastconn-api.iot.360.cn
 fc1tn.baidu.com
