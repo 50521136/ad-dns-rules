@@ -151,7 +151,6 @@ ajax.googleapis.com
 akamaized.net
 aks.jdpay.com
 alb-jjexm35p5nv4ven8gt.cn-shenzhen.alb.aliyuncsslb.com
-alb.reddit.com
 ali-gamezone.static.yximgs.com
 ali-ky.static.yximgs.com
 ali-stats.jpush.cn
@@ -442,7 +441,6 @@ baikebcs.bdimg.com
 baixing.com
 bam.nr-data.net
 base.cup.com.cn
-bat.bing.com
 bbs-static.miyoushe.com
 bbs.huorong.cn
 bbs.mcmod.cn

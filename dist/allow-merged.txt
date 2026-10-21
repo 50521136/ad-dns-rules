@@ -1,6 +1,6 @@
 ! Title: ad-dns-rules 合并白名单（@@ 例外，可订阅到普通过滤器槽位）
-! Rules: 6500
-! Generated: 2026-10-20 21:28:58 UTC
+! Rules: 6498
+! Generated: 2026-10-21 21:30:54 UTC
 ! Repo: https://github.com/50521136/ad-dns-rules
 !
 @@||0.client-channel.google.com^
@@ -295,7 +295,6 @@
 @@||aks.jdpay.com^
 @@||al-aqsanews.com^
 @@||alb-jjexm35p5nv4ven8gt.cn-shenzhen.alb.aliyuncsslb.com^
-@@||alb.reddit.com^
 @@||albert.apple.com^
 @@||ali-gamezone.static.yximgs.com^
 @@||ali-ky.static.yximgs.com^
@@ -801,7 +800,6 @@
 @@||baoi.sanshuailiujiang.xyz^
 @@||baozhang.baidu.com^
 @@||base.cup.com.cn^
-@@||bat.bing.com^
 @@||bbs-img.hupu.com^
 @@||bbs-static.miyoushe.com^
 @@||bbs.cndeaf.com^
