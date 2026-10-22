@@ -5,13 +5,13 @@
 
 | 类型 | 源 | 原始行 | 有效 | 其中 hosts | 其中裸域名 | 去重后 | 通配符跳过 | 丢弃 |
 |---|---|---|---|---|---|---|---|---|
-| block | 217heidai | 236392 | 236381 | 0 | 0 | 236354 | 0 | 1 |
-| block | menghui | 296193 | 295516 | 67 | 0 | 295547 | 399 | 206 |
+| block | 217heidai | 240212 | 240201 | 0 | 0 | 240174 | 0 | 1 |
+| block | menghui | 296352 | 295664 | 79 | 0 | 295695 | 398 | 206 |
 | block | 扶风 | 33539 | 20742 | 10900 | 0 | 24116 | 819 | 527 |
 | block | 海哥 | 13138 | 12923 | 0 | 0 | 12922 | 165 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 292 | 82 | 0 | 0 | 82 | 0 | 0 |
-| allow | 234 | 6303 | 6048 | 0 | 0 | 6047 | 181 | 0 |
+| allow | 234 | 6303 | 6045 | 0 | 0 | 6044 | 181 | 0 |
 | allow | menghui | 460 | 443 | 0 | 0 | 443 | 10 | 2 |
 | allow | kuner | 80 | 37 | 0 | 0 | 37 | 11 | 1 |
 | allow | trli | 1431 | 0 | 0 | 1409 | 1404 | 10 | 0 |
@@ -19,17 +19,17 @@
 
 ## 结果
 
-- 黑名单输出：**360625** 条
-- 白名单输出：**6498** 条（已统一 `@@||domain^` 语法）
+- 黑名单输出：**361901** 条
+- 白名单输出：**6495** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**82** 个
 - 因自建黑名单优先而剔除的放行条目：**12** 条
-- 同域既拦又放（保留放行侧）：**3734** 条
+- 同域既拦又放（保留放行侧）：**3732** 条
 
 ## 解析备注
 
 - `block/217heidai` 有 1 条无法解析被丢弃，样例：`||fb_servpub-a.akamaihd.net^`
 - ⚠️ **block/234** 下载失败：`下载失败 https://www.23-4.cn/rules/merged-block.txt: HTTP Error 404: Not Found`
-- `block/menghui` 有 399 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
+- `block/menghui` 有 398 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
 - `block/menghui` 有 206 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
 - `block/扶风` 有 819 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
 - `block/扶风` 有 527 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
@@ -269,7 +269,7 @@
 
 ## 同域冲突
 
-共 3734 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
+共 3732 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
 
 想把其中某几个恢复拦截：把它们加进 `blacklist.txt`，下次跑流水线会自动剔除白名单侧对应条目。
 完整清单见 `dist/conflicts.txt`。
@@ -424,4 +424,4 @@
 - `aisubtitle.hdslb.com`
 - `aizhan.com`
 - `ajax.googleapis.com`
-- …（还有 3584 条，见 conflicts.txt）
+- …（还有 3582 条，见 conflicts.txt）

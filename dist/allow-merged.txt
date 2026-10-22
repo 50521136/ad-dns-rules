@@ -1,6 +1,6 @@
 ! Title: ad-dns-rules 合并白名单（@@ 例外，可订阅到普通过滤器槽位）
-! Rules: 6498
-! Generated: 2026-10-21 21:30:54 UTC
+! Rules: 6495
+! Generated: 2026-10-22 21:25:58 UTC
 ! Repo: https://github.com/50521136/ad-dns-rules
 !
 @@||0.client-channel.google.com^
@@ -2251,7 +2251,6 @@
 @@||gateway.icloud.com^
 @@||gateway.kugou.com^
 @@||gateway3.kugou.com^
-@@||gator.volces.com^
 @@||gc-gamespace-cn.heytapmobi.com^
 @@||gc.apple.com^
 @@||gcloudcs.com^
@@ -3473,7 +3472,6 @@
 @@||mcore.health.pingan.com^
 @@||mcs.ele.me^
 @@||mcs.snssdk.com^
-@@||mcs.zijieapi.com^
 @@||mdgram.app^
 @@||mdm.openapi.360.cn^
 @@||mdmdown.mayitek.com^
@@ -3704,7 +3702,6 @@
 @@||mssdk-bu.bytedance.com^
 @@||mssdk.bytedance.com^
 @@||mssdk.snssdk.com^
-@@||mssdk.volces.com^
 @@||mssdk3-normal-hj.zijieapi.com^
 @@||mssdk3-normal-lf.zijieapi.com^
 @@||msync-im1-vip6-std.easemob.com^

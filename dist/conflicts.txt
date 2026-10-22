@@ -1092,6 +1092,7 @@ encrypted-tbn3.gstatic.com
 engine.tuia.cn
 enigmasoftware.com
 enrichgw.10010.com
+ens.nzz.ch
 envato.market
 ereg.adobe.com
 err.taobao.com
@@ -1245,7 +1246,6 @@ games.mobileapi.hupu.com
 gamezop.com
 gate.first-id.fr
 gateway.kugou.com
-gator.volces.com
 gc-gamespace-cn.heytapmobi.com
 gcloudsdk.com
 gdfp.gifshow.com
@@ -1966,7 +1966,6 @@ mcdn.bilivideo.cn
 mcdn.pinduoduo.com
 mcs.ele.me
 mcs.snssdk.com
-mcs.zijieapi.com
 mdgram.app
 mdm.openapi.360.cn
 med-fe.cdn.bcebos.com
@@ -2089,7 +2088,6 @@ mss0.bdstatic.com
 mssdk-bu.bytedance.com
 mssdk.bytedance.com
 mssdk.snssdk.com
-mssdk.volces.com
 mssdk3-normal-hj.zijieapi.com
 mssdk3-normal-lf.zijieapi.com
 msync-im1-vip6-std.easemob.com
