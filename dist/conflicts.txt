@@ -159,6 +159,7 @@ ali2-course.video.yximgs.com
 ali2.a.kwimgs.com
 ali2.a.yximgs.com
 alime-customer-upload-cn-hangzhou.oss-cn-hangzhou.aliyuncs.com
+alimelog.taobao.com
 alissl.ucdl.pp.uc.cn
 alist.wavee.cn
 alistgo.com
@@ -430,6 +431,7 @@ b.stats.paypal.com
 b23.tv
 b3log.org
 b3logfile.com
+babel-statistics-android.dreport.meituan.net
 bad.news
 bag.itunes.apple.com
 baichuan-sdk.alicdn.com
@@ -697,6 +699,8 @@ client.app.coc.10086.cn
 client.wns.windows.com
 clientlog.music.163.com
 clientlog3.music.163.com
+clientlogdep.music.163.com
+clientlogsf.music.163.com
 clients.l.google.com
 clients1.google.com
 clients4.google.com
@@ -827,6 +831,7 @@ cpu.baidu.com
 cpucdn.baidu.com
 cpv2.mairuan.com
 cqcounter.com
+crash.163.com
 cre.dp.sina.cn
 credit-cdn.heytap.com
 credit-jfimage-cn.heytapimage.com
@@ -877,6 +882,7 @@ danbooru.donmai.us
 dangbei.com
 dartsearch.net
 dashi.163.com
+data-sdk-uuid-log.d.meituan.net
 data-sdk-uuid-report.dreport.meituan.net
 data.adxcel-ec2.com
 data.bilibili.com
@@ -1109,10 +1115,12 @@ events.gfe.nvidia.com
 events.mapbox.com
 evtubescms.phncdn.com
 ew.phncdn.com
+ex.m.jd.com
 example.com
 exhentai.org
 exp-new.bdstatic.com
 exp.sug.browser.miui.com
+expendablekmrcdn.kugou.com
 experience.tinypass.com
 exponea.com
 exporntoons.net
@@ -1340,7 +1348,6 @@ gw-paopao.iqiyi.com
 gw.365you.com
 gw.alicdn.com
 gx-target-experiments-frontend-api.gx.nvidia.com
-h-adashx4ae.ut.taobao.com
 h-cast.jp
 h-sdk.online-metrix.net
 h.163.com
@@ -1395,6 +1402,7 @@ hentaihand.com
 hermes.hupu.com
 heroku.com
 heyi-acs.cp31.ott.cibntv.net
+hicloud.com
 hidive.com
 hikaku-sitatter.com
 hilink.huawei.com
@@ -1430,6 +1438,7 @@ htms.heytapmobi.com
 htrace.wetvinfo.com
 httpdns.alicdn.com
 httpdns.meituan.com
+httpdns.music.163.com
 hub.docker.com
 hub.xunlei.com
 hub5btmain.sandai.net
@@ -1697,12 +1706,13 @@ keystone.mwbsys.com
 kf-ui.cdn-go.cn
 kjimg10.360buyimg.com
 klpbbs.com
+kmrcdn.service.kugou.com
+kmrcdnretry.service.kugou.com
 knet.cn
 knicks.jd.com
 konachan.com
 ks.push.yximgs.com
 kubernetes.io
-kugou.com
 kunlunpi.com
 kutt.it
 kuwo.cn
@@ -1899,6 +1909,7 @@ m.youlai.cn
 m.youtube.com
 m.zhibo8.com
 m.zhuanzhuan.com
+m0fanxing.kugou.com
 m1.daumcdn.net
 m1.img.10010.com
 m1.nsimg.net
@@ -2126,6 +2137,7 @@ nas.xunlei.com
 nav.browser.miui.com
 nav.porsche.com
 navigis.uc.cn
+nbcollect.kugou.com
 nc.gdt.qq.com
 ncomment.kuwo.cn
 nd-static.bdstatic.com
@@ -2170,6 +2182,7 @@ npm.cdn-go.cn
 npm.elemecdn.com
 ns.wg.hismarttv.com
 nsclick.baidu.com
+nsongacsing.kugou.com
 nspt.bdstatic.com
 nstool.netease.com
 nuskin.com
@@ -2248,10 +2261,13 @@ open.oppomobile.com
 open.snssdk.com
 open.unionpay.com
 open.unionpayintl.com
+openacs.m.taobao.com
+openacs4uc.m.taobao.com
 openap-alps.51y5.net
 openapi.vmall.com
 opencloud.wostore.cn
 openjmacs.m.taobao.com
+openjmacs4uc.m.taobao.com
 openmobile.qq.com
 oppo.yidianzixun.com
 optimove.net
@@ -2339,6 +2355,7 @@ p47-buy.itunes.apple.com
 p5-auto-sign.dcarimg.com
 p5-auto.dcarimg.com
 p5-sign.douyinpic.com
+p5.d.meituan.net
 p5.douyinpic.com
 p6-catpcha.byteimg.com
 p6-dcd-sign.byteimg.com
@@ -2373,6 +2390,7 @@ p9.douyinpic.com
 packagebssdlbig.tx.kugou.com
 page.amap.com
 pagead.l.doubleclick.net
+pages-fast.m.taobao.com
 pages.github.com
 pan.quark.cn
 pan.xunlei.com
@@ -2475,6 +2493,7 @@ player-feedback-v1.glomex.com
 player.youku.com
 plyr.io
 pm.funshion.com
+pns.alicdn.com
 po.funshion.com
 podman.io
 pogget.vilinko.com
@@ -2554,6 +2573,7 @@ qhres2.com
 qi.163.com
 qidian.gtimg.com
 qidian.qpic.cn
+qishui.com
 qiye.163.com
 qlogo.cn
 qlp.qinlinad.com
@@ -2655,11 +2675,13 @@ responsys.net
 restapi.amap.com
 restsdk.amap.com
 retail.taobao.com
+retcode.taobao.com
 risk.taobao.com
 rls.tapimg.com
 rm.gdt.qq.com
 rpt.gdt.qq.com
 rs.xmeye.net
+rt-m.kugou.com
 rt.rtoaster.jp
 rtbapi.douyucdn.cn
 rtoaster.jp
@@ -2810,6 +2832,7 @@ siteapps.com
 siteintercept.qualtrics.com
 siwazywcdn2.com
 siyuannote.com
+sjarvis.taobao.com
 sjh.baidu.com
 sjws.ssl.qihucdn.com
 skimresources.com
@@ -3042,6 +3065,7 @@ target.microsoft.com
 taskofdeity.netlify.app
 tawk.to
 tb.himg.baidu.com
+tbexpand.alicdn.com
 tbi.sb-cd.com
 tbm-auth.alicdn.com
 tbv.sb-cd.com
@@ -3182,6 +3206,7 @@ uiam.unionpayintl.com
 uland.taobao.com
 ulive-interact.uc.cn
 ulive-sc.uc.cn
+umc.danuoyi.alicdn.com
 umengjmacs.m.taobao.com
 umiwi.com
 umwatson.events.data.microsoft.com
@@ -3230,6 +3255,7 @@ used.ca
 user-images.githubusercontent.com
 user.e.189.cn
 user.xunlei.com
+userlink.alicdn.com
 uxip.meizu.com
 uzzf.com
 v.douyin.com

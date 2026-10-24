@@ -5,13 +5,14 @@
 
 | 类型 | 源 | 原始行 | 有效 | 其中 hosts | 其中裸域名 | 去重后 | 通配符跳过 | 丢弃 |
 |---|---|---|---|---|---|---|---|---|
-| block | 217heidai | 241801 | 241790 | 0 | 0 | 241763 | 0 | 1 |
-| block | menghui | 296635 | 296098 | 67 | 0 | 296129 | 398 | 67 |
-| block | 扶风 | 33546 | 20749 | 10900 | 0 | 24123 | 819 | 527 |
+| block | 217heidai | 242183 | 242172 | 0 | 0 | 242145 | 0 | 1 |
+| block | 234 | 475745 | 474327 | 0 | 0 | 474261 | 1241 | 171 |
+| block | menghui | 297335 | 296647 | 79 | 0 | 296678 | 398 | 206 |
+| block | 扶风 | 33547 | 20749 | 10900 | 0 | 24123 | 819 | 528 |
 | block | 海哥 | 13136 | 12922 | 0 | 0 | 12921 | 164 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 292 | 82 | 0 | 0 | 82 | 0 | 0 |
-| allow | 234 | 6303 | 6045 | 0 | 0 | 6044 | 181 | 0 |
+| allow | 234 | 6402 | 6142 | 0 | 0 | 6141 | 182 | 0 |
 | allow | menghui | 460 | 443 | 0 | 0 | 443 | 10 | 2 |
 | allow | kuner | 80 | 37 | 0 | 0 | 37 | 11 | 1 |
 | allow | trli | 1431 | 0 | 0 | 1409 | 1404 | 10 | 0 |
@@ -19,25 +20,26 @@
 
 ## 结果
 
-- 黑名单输出：**363419** 条
-- 白名单输出：**6495** 条（已统一 `@@||domain^` 语法）
+- 黑名单输出：**577192** 条
+- 白名单输出：**6596** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**82** 个
-- 因自建黑名单优先而剔除的放行条目：**12** 条
-- 同域既拦又放（保留放行侧）：**3732** 条
+- 因自建黑名单优先而剔除的放行条目：**13** 条
+- 同域既拦又放（保留放行侧）：**3758** 条
 
 ## 解析备注
 
 - `block/217heidai` 有 1 条无法解析被丢弃，样例：`||fb_servpub-a.akamaihd.net^`
-- ⚠️ **block/234** 下载失败：`下载失败 https://www.23-4.cn/rules/merged-block.txt: HTTP Error 404: Not Found`
+- `block/234` 有 1241 条含通配符/正则的规则被跳过，样例：`*/motor/ad/api/*`, `/(https?:\/\/)213\.32\.115\..{100,}/`, `/(https?:\/\/)217\.182\.11\..{100,}/`, `/(https?:\/\/)51\.195\.31\..{100,}/`
+- `block/234` 有 171 条无法解析被丢弃，样例：`||-1080x140-.^`, `||-1080x140.^`, `||-1080x180-.^`, `||-1300-x-200-.^`
 - `block/menghui` 有 398 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
-- `block/menghui` 有 67 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
+- `block/menghui` 有 206 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
 - `block/扶风` 有 819 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
-- `block/扶风` 有 527 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
+- `block/扶风` 有 528 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
 - `block/海哥` 有 164 条含通配符/正则的规则被跳过，样例：`||*-99wanyou-com-idvkrgg.qiniudns.co`, `||*-default.ixigua.com^`, `||*-hl.toutiaoapi.com^`, `||*-jor0b302fdhgwnccw8g.com^`
 - `block/海哥` 有 36 条无法解析被丢弃，样例：`||/7gq78s4ltrea/^`, `||0019a^`, `||216.239.35.0/24^`, `||295cdn^`
 - `block/暗雅日记` 有 25 条含通配符/正则的规则被跳过，样例：`||ad*.idcyz.hb1.kwaidc.com^`, `||ads*-normal-hl.zijieapi.com^`, `||ads*-normal-lf.zijieapi.com^`, `||ads*-normal-lq.zijieapi.com^`
 - `block/暗雅日记` 有 1 条无法解析被丢弃，样例：`||api.zhihu.com/ad-style-service`
-- `allow/234` 有 181 条含通配符/正则的规则被跳过，样例：`||*.*.szbdyd.com^`, `||*.4399.com^`, `||*.5054399.com^`, `||*.7k7k.com^`
+- `allow/234` 有 182 条含通配符/正则的规则被跳过，样例：`||*.*.szbdyd.com^`, `||*.4399.com^`, `||*.5054399.com^`, `||*.7k7k.com^`
 - `allow/menghui` 有 10 条含通配符/正则的规则被跳过，样例：`@@||api-v*.trbo.com^`, `@@||bcicl.*.evergage.com^`, `@@||brm-core-*.brsrvr.com^`, `@@||cdn.us*.exponea.com^`
 - `allow/menghui` 有 2 条无法解析被丢弃，样例：`@@-ds.metric.gstatic.com^`, `@@||白名单仅用于测试.com^`
 - `allow/kuner` 有 11 条含通配符/正则的规则被跳过，样例：`@@||*m*.360buyimg.com^`, `@@||storage*360buyimg.com^`, `@@||p*reading*sign.fqnovelpic.com^`, `@@||api*normal*fqnovel.com^`
@@ -54,6 +56,7 @@
 | `baidu.com` | union.baidu.com |
 | `bytedance.com` | scc.bytedance.com |
 | `e.kuaishou.com` | e.kuaishou.com |
+| `fourier.taobao.com` | fourier.taobao.com |
 | `mon.zijieapi.com` | mon.zijieapi.com |
 | `qq.com` | aegis.qq.com, appchannel.html5.qq.com, btrace.qq.com, e.qq.com, gdt.qq.com, masdk.3g.qq.com, pingjs.qq.com, pmir.3g.qq.com, tdid.m.qq.com, trace.qq.com, union.eff.qq.com |
 | `scc.bytedance.com` | scc.bytedance.com |
@@ -63,7 +66,7 @@
 
 ## 剩余整域放行（段数 <= 2，建议人工复核）
 
-共 1170 条：
+共 1169 条：
 
 - `0.com`
 - `000714.xyz`
@@ -265,11 +268,11 @@
 - `coolapk.com`
 - `coolapkmarket.com`
 - `coolrom.com`
-- …（还有 970 条）
+- …（还有 969 条）
 
 ## 同域冲突
 
-共 3732 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
+共 3758 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
 
 想把其中某几个恢复拦截：把它们加进 `blacklist.txt`，下次跑流水线会自动剔除白名单侧对应条目。
 完整清单见 `dist/conflicts.txt`。
@@ -424,4 +427,4 @@
 - `aisubtitle.hdslb.com`
 - `aizhan.com`
 - `ajax.googleapis.com`
-- …（还有 3582 条，见 conflicts.txt）
+- …（还有 3608 条，见 conflicts.txt）
