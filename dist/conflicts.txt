@@ -2013,6 +2013,7 @@ miniapp.gtimg.cn
 minigame.gtimg.cn
 minigame.zijieapi.com
 minigame5-normal-hl.zijieapi.com
+minor-api.mihoyo.com
 minorshort.weixin.qq.com
 mip.xiachufang.com
 mipcache.bdstatic.com
