@@ -5,11 +5,11 @@
 
 | 类型 | 源 | 原始行 | 有效 | 其中 hosts | 其中裸域名 | 去重后 | 通配符跳过 | 丢弃 |
 |---|---|---|---|---|---|---|---|---|
-| block | 217heidai | 240308 | 240297 | 0 | 0 | 240270 | 0 | 1 |
+| block | 217heidai | 241062 | 241051 | 0 | 0 | 241024 | 0 | 1 |
 | block | 234 | 475745 | 474327 | 0 | 0 | 474261 | 1241 | 171 |
-| block | menghui | 298399 | 297712 | 78 | 0 | 297743 | 398 | 206 |
-| block | 扶风 | 33548 | 20749 | 10900 | 0 | 24123 | 819 | 529 |
-| block | 海哥 | 13144 | 12931 | 0 | 0 | 12930 | 164 | 36 |
+| block | menghui | 299715 | 299027 | 79 | 0 | 299058 | 398 | 206 |
+| block | 扶风 | 33550 | 20750 | 10900 | 0 | 24124 | 821 | 528 |
+| block | 海哥 | 13154 | 12940 | 0 | 0 | 12939 | 164 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 292 | 82 | 0 | 0 | 82 | 0 | 0 |
 | allow | 234 | 6402 | 6142 | 0 | 0 | 6141 | 182 | 0 |
@@ -20,7 +20,7 @@
 
 ## 结果
 
-- 黑名单输出：**585824** 条
+- 黑名单输出：**587848** 条
 - 白名单输出：**6596** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**82** 个
 - 因自建黑名单优先而剔除的放行条目：**13** 条
@@ -33,8 +33,8 @@
 - `block/234` 有 171 条无法解析被丢弃，样例：`||-1080x140-.^`, `||-1080x140.^`, `||-1080x180-.^`, `||-1300-x-200-.^`
 - `block/menghui` 有 398 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
 - `block/menghui` 有 206 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
-- `block/扶风` 有 819 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
-- `block/扶风` 有 529 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
+- `block/扶风` 有 821 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
+- `block/扶风` 有 528 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
 - `block/海哥` 有 164 条含通配符/正则的规则被跳过，样例：`||*-99wanyou-com-idvkrgg.qiniudns.co`, `||*-default.ixigua.com^`, `||*-hl.toutiaoapi.com^`, `||*-jor0b302fdhgwnccw8g.com^`
 - `block/海哥` 有 36 条无法解析被丢弃，样例：`||/7gq78s4ltrea/^`, `||0019a^`, `||216.239.35.0/24^`, `||295cdn^`
 - `block/暗雅日记` 有 25 条含通配符/正则的规则被跳过，样例：`||ad*.idcyz.hb1.kwaidc.com^`, `||ads*-normal-hl.zijieapi.com^`, `||ads*-normal-lf.zijieapi.com^`, `||ads*-normal-lq.zijieapi.com^`
