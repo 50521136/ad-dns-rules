@@ -114,7 +114,6 @@ ads.95516.com
 ads.cdn.tvb.com
 ads.google.com
 ads.microsoft.com
-ads.midwayusa.com
 ads.pinterest.com
 ads.snapchat.com
 ads.spotify.com
