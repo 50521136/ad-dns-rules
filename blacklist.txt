@@ -290,3 +290,63 @@
 ! ||p3-novel.byteimg.com^        封面图 CDN
 ! ||bytegecko.com^               视频/资源 CDN
 ! ||lf3-reading.fqnovelstatic.com^  静态资源
+
+! ==========================================================================
+! [番茄小说 com.dragon.read] 第三方 Clash 规则转换 —— 非 APK 逆向产出
+! 来源: https://yfamilys.com/rewrite/fanqienovel.conf（作者 zqzess，Clash rule-provider）
+! 转换: Clash 的 DOMAIN / DOMAIN-SUFFIX REJECT → ||domain^（AGH 的 ||d^ 本身即含子域）
+!       通配符 *xxx.yyy 本仓库策略是丢弃，这里按「后缀近似」展开成 ||xxx.yyy^；
+!       Clash 的 * 语义是「任意以该串结尾的主机名」，所以前缀不同名的
+!       v6-novelapp.ixigua.com 在原文件里是单独一条，已一并保留
+! 存活验证: 2026-11-02 用 dig 核过，括号内为当日解析结果
+! ==========================================================================
+! --- 启用：广告素材 / 广告活动 / 广告平台 ---
+||activity-ag.awemeughun.com^
+||sf3-ttcdn-tos.pstatp.com^
+||gurd.snssdk.com^
+||api.iegadp.qq.com^
+||byteorge.com^
+||bytegoofy.com^
+||v6-novelapp.ixigua.com^
+||novelapp.ixigua.com^
+||default.ixigua.com^
+!
+! --- 启用（配置下发 / 风控类，上游拦；如遇功能异常优先注释掉这三条）---
+||tnc3-alisc1.snssdk.com^
+||tnc3-aliec2.snssdk.com^
+||security-lq.snssdk.com^
+!
+! --- 未启用：上游 REJECT，但已有证据表明拦了会坏功能或与本仓库白名单打架 ---
+! ||p6-ad-sign.byteimg.com^          广告签名（dig 得 162.128.226.8）；但 whitelist.txt 有
+!                                    @@||byteimg.com^（封面图 CDN），AGH 里 @@ 优先级更高
+!                                    → 这条必然失效。要真拦需写成 $important 并改 check.py 的冲突判定
+! ||p9-ad-sign.byteimg.com^          同上
+! ||i.snssdk.com^                    番茄/红果金币任务、签到、桌面组件 —— 见下方「明确不建议拦截」节
+! ||i-lq.snssdk.com^                 同上（-lq 区域变体，dig 得 155.102.180.251）
+! ||is.snssdk.com^                   设置接口 /service/settings/v3/ —— 同上
+! ||mcs.snssdk.com^                  配置下发，红果节已有注释
+! ||dig.bdurl.net^                   短链解析，红果节已有注释
+! ||msync-im1-vip6-std.easemob.com^  环信 IM 长连接（dig 得 39.97.194.36）—— 客服/私信会掉线
+! ||apd-pcdnwxlogin.teg.tencent-cloud.net^  微信登录长连接（dig 得 0.0.0.1，已被腾讯自己黑洞）
+!                                    见下方「明确不建议拦截」节，拦了微信掉线
+! ||bytedance.com^                   整域太激进，会连带 openspeech 等必要域（白名单里只救了那一个）
+! ||pstatp.com^                      字节图片/视频 CDN 整域，拦了图全没；只保留 sf3-ttcdn-tos 精确条目
+!
+! --- 无法转换：DNS 层表达不了，需在其它层实现 ---
+! DOMAIN-KEYWORD zijieapi           DNS 没有关键字匹配。这个关键字已被红果节的 10 条精确条目覆盖
+!                                  （ad / ads / ads3-normal / ads5-normal 及其 -lf/-hl/-lq 变体），
+!                                  而整域 ||zijieapi.com^ 会误伤 mon/verify/gecko/relation/minigame
+! IP-CIDR 49.71.37.101/32           以下 6 条只能靠防火墙/路由层，AGH 的 DNS 过滤对 IP 无效：
+! IP-CIDR 117.71.105.23/32            49.71.37.101 · 117.71.105.23 · 218.94.207.205
+! IP-CIDR 218.94.207.205/32           117.92.229.188 · 101.36.166.16 · 180.96.2.114
+! IP-CIDR 117.92.229.188/32
+! IP-CIDR 101.36.166.16/32
+! IP-CIDR 180.96.2.114/32
+! URL 正则 14 条                    按 path 拦广告（/api/ad/union/sdk/geturlads/、/obj/ad-app-package、
+!                                  /tos-cn-i-1yzifmftcy/*-jpeg.jpeg、/video/play/1/toutiao/*/mp4 等），
+!                                  DNS 层拿不到 path，需要 AdGuard for Android 的 HTTPS 过滤
+!                                  或代理层 rewrite。涉及的域名上面已按域覆盖
+! hostname =*.pangolin-sdk-toutiao *.pstatp.com *.pglstatp-toutiao.com …
+!                                  该行是 hosts 通配写法，等价域名已被酷安节
+!                                  （||pangolin-sdk-toutiao.com^ / ||pglstatp-toutiao.com^，
+!                                  后者与本文件第 14 行重复，未重复添加）和本节覆盖
