@@ -92,7 +92,7 @@ AdGuard / AdGuard Home / 任意 adblock 语法的过滤器都能用：
 | 今日水印相机 | 3.0.465.8 | 9 条 | [docs/xcamera-3.0.465.8.md](docs/xcamera-3.0.465.8.md) |
 | 红果免费短剧 | 7.2.5.32 | 10 条 | [docs/hongguo-7.2.5.32.md](docs/hongguo-7.2.5.32.md) |
 | 微信 WeChat | 8.0.79 | 3 条 + 9 条通用第三方 | [docs/wechat-8.0.79.md](docs/wechat-8.0.79.md) |
-| 番茄小说 | 规则集转换（**非**逆向） | 12 条启用 + 10 条注释 | [blacklist.txt](blacklist.txt) 该节内注释 |
+| 番茄小说 | 规则集转换（**非**逆向） | 12 条启用 + 11 条注释 | [blacklist.txt](blacklist.txt) 该节内注释 |
 
 **番茄小说那节是唯一不是逆向来的**：来源是第三方 Clash 规则集
 `https://yfamilys.com/rewrite/fanqienovel.conf`（作者 zqzess），做的是语法转换而不是域名提取。
