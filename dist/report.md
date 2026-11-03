@@ -7,11 +7,11 @@
 |---|---|---|---|---|---|---|---|---|
 | block | 217heidai | 241917 | 241906 | 0 | 0 | 241879 | 0 | 1 |
 | block | 234 | 475745 | 474327 | 0 | 0 | 474261 | 1241 | 171 |
-| block | menghui | 299792 | 299107 | 76 | 0 | 299138 | 398 | 206 |
+| block | menghui | 301435 | 300760 | 66 | 0 | 300791 | 398 | 206 |
 | block | 扶风 | 33554 | 20760 | 10894 | 0 | 24132 | 821 | 528 |
 | block | 海哥 | 13169 | 12956 | 0 | 0 | 12955 | 164 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
-| block | 自建 | 292 | 82 | 0 | 0 | 82 | 0 | 0 |
+| block | 自建 | 352 | 94 | 0 | 0 | 94 | 0 | 0 |
 | allow | 234 | 6401 | 6141 | 0 | 0 | 6141 | 182 | 0 |
 | allow | menghui | 460 | 443 | 0 | 0 | 443 | 10 | 2 |
 | allow | kuner | 80 | 37 | 0 | 0 | 37 | 11 | 1 |
@@ -20,11 +20,11 @@
 
 ## 结果
 
-- 黑名单输出：**595014** 条
-- 白名单输出：**6596** 条（已统一 `@@||domain^` 语法）
-- 自建黑名单域名：**82** 个
-- 因自建黑名单优先而剔除的放行条目：**13** 条
-- 同域既拦又放（保留放行侧）：**3758** 条
+- 黑名单输出：**597358** 条
+- 白名单输出：**6593** 条（已统一 `@@||domain^` 语法）
+- 自建黑名单域名：**94** 个
+- 因自建黑名单优先而剔除的放行条目：**16** 条
+- 同域既拦又放（保留放行侧）：**3756** 条
 
 ## 解析备注
 
@@ -58,15 +58,18 @@
 | `e.kuaishou.com` | e.kuaishou.com |
 | `fourier.taobao.com` | fourier.taobao.com |
 | `mon.zijieapi.com` | mon.zijieapi.com |
-| `qq.com` | aegis.qq.com, appchannel.html5.qq.com, btrace.qq.com, e.qq.com, gdt.qq.com, masdk.3g.qq.com, pingjs.qq.com, pmir.3g.qq.com, tdid.m.qq.com, trace.qq.com, union.eff.qq.com |
+| `pstatp.com` | sf3-ttcdn-tos.pstatp.com |
+| `qq.com` | aegis.qq.com, api.iegadp.qq.com, appchannel.html5.qq.com, btrace.qq.com, e.qq.com, gdt.qq.com, masdk.3g.qq.com, pingjs.qq.com, pmir.3g.qq.com, tdid.m.qq.com, trace.qq.com, union.eff.qq.com |
 | `scc.bytedance.com` | scc.bytedance.com |
-| `snssdk.com` | applog.snssdk.com, log.snssdk.com, rtapplog.snssdk.com, rtlog.snssdk.com |
+| `sf3-ttcdn-tos.pstatp.com` | sf3-ttcdn-tos.pstatp.com |
+| `snssdk.com` | applog.snssdk.com, gurd.snssdk.com, log.snssdk.com, rtapplog.snssdk.com, rtlog.snssdk.com, security-lq.snssdk.com, tnc3-aliec2.snssdk.com, tnc3-alisc1.snssdk.com |
 | `taobao.com` | fourier.taobao.com, h-adashx.ut.taobao.com |
 | `tdid.m.qq.com` | tdid.m.qq.com |
+| `tnc3-aliec2.snssdk.com` | tnc3-aliec2.snssdk.com |
 
 ## 剩余整域放行（段数 <= 2，建议人工复核）
 
-共 1169 条：
+共 1168 条：
 
 - `0.com`
 - `000714.xyz`
@@ -268,11 +271,11 @@
 - `coolapk.com`
 - `coolapkmarket.com`
 - `coolrom.com`
-- …（还有 969 条）
+- …（还有 968 条）
 
 ## 同域冲突
 
-共 3758 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
+共 3756 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
 
 想把其中某几个恢复拦截：把它们加进 `blacklist.txt`，下次跑流水线会自动剔除白名单侧对应条目。
 完整清单见 `dist/conflicts.txt`。
@@ -427,4 +430,4 @@
 - `aizhan.com`
 - `ajax.googleapis.com`
 - `akamaized.net`
-- …（还有 3608 条，见 conflicts.txt）
+- …（还有 3606 条，见 conflicts.txt）

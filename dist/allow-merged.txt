@@ -1,6 +1,6 @@
 ! Title: ad-dns-rules 合并白名单（@@ 例外，可订阅到普通过滤器槽位）
-! Rules: 6596
-! Generated: 2026-11-01 21:55:52 UTC
+! Rules: 6593
+! Generated: 2026-11-03 00:51:38 UTC
 ! Repo: https://github.com/50521136/ad-dns-rules
 !
 @@||0.client-channel.google.com^
@@ -4518,7 +4518,6 @@
 @@||pss.alicdn.com^
 @@||pss.bdstatic.com^
 @@||psstatic.cdn.bcebos.com^
-@@||pstatp.com^
 @@||pt-starimg.didistatic.com^
 @@||pt.afl.rakuten.co.jp^
 @@||pti.store.microsoft.com^
@@ -4987,7 +4986,6 @@
 @@||sf3-cdn-tos.douyinstatic.com^
 @@||sf3-cdn-tos.toutiaostatic.com^
 @@||sf3-pitaya-tos.pstatp.com^
-@@||sf3-ttcdn-tos.pstatp.com^
 @@||sf6-cdn-tos.bdxiguastatic.com^
 @@||sf6-cdn-tos.douyinstatic.com^
 @@||sf6-cdn-tos.toutiaostatic.com^
@@ -5581,7 +5579,6 @@
 @@||tnc11-bjlgy.zijieapi.com^
 @@||tnc16-platform-useast1a.tiktokv.com^
 @@||tnc3-aliec2.bytedance.com^
-@@||tnc3-aliec2.snssdk.com^
 @@||tnc3-alisc1.bytedance.com^
 @@||tnc3-alisc1.zijieapi.com^
 @@||tnc3-bjlgy.bytedance.com^
