@@ -890,6 +890,7 @@ data.cnn.com
 data.dangbei.com
 data.digital.costco.ca
 data.digital.costco.com
+data.email.premierleague.com
 data.flurry.com
 data.game.xiaomi.com
 data.mistat.intl.xiaomi.com
