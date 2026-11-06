@@ -7,9 +7,9 @@
 |---|---|---|---|---|---|---|---|---|
 | block | 217heidai | 241917 | 241906 | 0 | 0 | 241879 | 0 | 1 |
 | block | 234 | 475745 | 474327 | 0 | 0 | 474261 | 1241 | 171 |
-| block | menghui | 303302 | 302625 | 68 | 0 | 302656 | 398 | 206 |
+| block | menghui | 303620 | 302948 | 64 | 0 | 302979 | 397 | 206 |
 | block | 扶风 | 33554 | 20760 | 10894 | 0 | 24132 | 821 | 528 |
-| block | 海哥 | 13169 | 12956 | 0 | 0 | 12955 | 164 | 36 |
+| block | 海哥 | 13183 | 12969 | 0 | 0 | 12968 | 164 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 352 | 94 | 0 | 0 | 94 | 0 | 0 |
 | allow | 234 | 6401 | 6141 | 0 | 0 | 6141 | 182 | 0 |
@@ -20,7 +20,7 @@
 
 ## 结果
 
-- 黑名单输出：**599607** 条
+- 黑名单输出：**599939** 条
 - 白名单输出：**6594** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**94** 个
 - 因自建黑名单优先而剔除的放行条目：**16** 条
@@ -31,7 +31,7 @@
 - `block/217heidai` 有 1 条无法解析被丢弃，样例：`||fb_servpub-a.akamaihd.net^`
 - `block/234` 有 1241 条含通配符/正则的规则被跳过，样例：`*/motor/ad/api/*`, `/(https?:\/\/)213\.32\.115\..{100,}/`, `/(https?:\/\/)217\.182\.11\..{100,}/`, `/(https?:\/\/)51\.195\.31\..{100,}/`
 - `block/234` 有 171 条无法解析被丢弃，样例：`||-1080x140-.^`, `||-1080x140.^`, `||-1080x180-.^`, `||-1300-x-200-.^`
-- `block/menghui` 有 398 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
+- `block/menghui` 有 397 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
 - `block/menghui` 有 206 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
 - `block/扶风` 有 821 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
 - `block/扶风` 有 528 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
