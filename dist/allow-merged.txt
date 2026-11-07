@@ -1,6 +1,6 @@
 ! Title: ad-dns-rules 合并白名单（@@ 例外，可订阅到普通过滤器槽位）
-! Rules: 6594
-! Generated: 2026-11-06 22:57:23 UTC
+! Rules: 6595
+! Generated: 2026-11-07 21:41:18 UTC
 ! Repo: https://github.com/50521136/ad-dns-rules
 !
 @@||0.client-channel.google.com^
@@ -5750,6 +5750,7 @@
 @@||unitedbike.com^
 @@||unpkg.com^
 @@||unpkg.zhimg.com^
+@@||unsubscribe.email.premierleague.com^
 @@||unsubscribe.lhinsights.com^
 @@||uol.com.br^
 @@||uop.quark.cn^

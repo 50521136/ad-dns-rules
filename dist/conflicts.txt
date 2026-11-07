@@ -1955,7 +1955,6 @@ map.bmcx.com
 map.qq.com
 maplocatesdksnapshot.d.meituan.net
 maplocatesdksnapshot.dreport.meituan.net
-maponline0.bdimg.com
 mapv.baidu.com
 market.cloud.tencent.com
 market.m.taobao.com
@@ -3215,6 +3214,7 @@ unified-ter.hismarttv.com
 unisdk.update.netease.com
 unpkg.com
 unpkg.zhimg.com
+unsubscribe.email.premierleague.com
 unsubscribe.lhinsights.com
 uop.quark.cn
 up.cm.ksmobile.com
@@ -3423,7 +3423,6 @@ wiki.ad-gone.com
 wiki.biligame.com
 win.gdt.qq.com
 win10.ipv6.microsoft.com
-win8.ipv6.microsoft.com
 wk.idey.cn
 wl.jd.com
 wl.spotify.com
