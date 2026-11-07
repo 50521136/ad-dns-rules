@@ -1,0 +1,82 @@
+! Title: 手机厂商系统组件上报域名（反诈 / 遥测 / 追踪）
+! Description: 各品牌 ROM 内置服务的上报、反诈、遥测域名。与 App 广告域名分开维护。
+! Homepage: https://github.com/50521136/ad-dns-rules
+! 订阅地址: https://raw.githubusercontent.com/50521136/ad-dns-rules/main/oem-telemetry.txt
+!
+! ── 本文件是独立订阅，不并入 dist/block-merged.txt ──────────────────────
+! 这些不是广告域名，是系统组件的云端接口。拦了会同时关掉对应的系统功能，
+! 有的还涉及紧急报警辅助、病毒扫描、权限云控。所以不加入 sources.json 的
+! 合并流水线（那条会对所有租户全局生效），只按需单独订阅：自用设备或指定
+! 用户层导入，别当通用黑名单下发。
+!
+! ── 规则取舍 ──────────────────────────────────────────────────────────
+! 下列 14 条默认全部启用。每条上方注明来源与实际用途；带 ⚠ 的拦了会有
+! 明确功能影响，只想拦纯遥测的话把那几行行首加 ! 注释掉即可。
+!
+! ── 来源与证据链 ──────────────────────────────────────────────────────
+! 提取与还原过程见 docs/xsof-free-3.3.md。原始输入是 XSOF Free v3.3 的
+! README（readme.txt），其第 25 行声称「19 个域名」但实际只列了 16 项，
+! 其中 11 项是省略后缀的简称、1 项是类别描述，能直接用的完整域名只有 4 个。
+! 简称按公开同源 hosts 规则还原，均已在文档里标明出处，未还原的不猜。
+!
+! ── 新增品牌 ──────────────────────────────────────────────────────────
+! 照抄下面的分节格式，一个品牌一节，写清来源、真机验证机型/版本、副作用。
+! 只收「系统组件自己的上报域名」，App 广告域名仍写进 blacklist.txt。
+!
+! ==========================================================================
+! [小米 Xiaomi / HyperOS] XSOF 涉诈检测框架 + 安全中心 + 系统追踪
+! 来源: XSOF Free v3.3 README (readme.txt L25 / L58)
+! 验证机型: 小米 15 / HyperOS 4.0.0.23.XOCCNXM / Android 17；
+!           另在 Mi 11 Ultra、Xiaomi Pad 验证过组件名兼容性
+! 说明: 前 4 条是 README 原文完整域名；其余由简称还原，见 docs/xsof-free-3.3.md
+! ==========================================================================
+
+! ── README 原文完整域名（4 条）────────────────────────────────────────
+! ⚠ 中国信通院统一反诈接口；也是拨打 110/120 时上传号码、区号、定位的
+!   紧急报警辅助通道（有独立开关与隐私政策）。拦了会影响该辅助功能。
+||eps.caict.ac.cn^
+! ⚠ 与上一条同属紧急报警辅助通道，AES 加密上报。
+||gateway-papa.cloud.weizhi.com^
+! 中国联通终端管理（DM）遥测，预置 com.mobiletools.systemhelper 的机型才有。
+! 注意它走 :18080 且可能写死 IP，DNS 层只能拦域名解析，拦不住直连 IP。
+||dm.wo.com.cn^
+! 小米广告 SDK / 广告策略接口（设备级，非某个 App 自营）。
+! blacklist.txt 酷安节里这条是注释未启用状态，本文件按独立订阅启用。
+||api.ad.xiaomi.com^
+
+! ── 由简称还原（10 条，含 L58 自检命令里的 flash.sec.miui.com）──────────
+! 反诈 / XSOF 检测引擎
+! ⚠ 固件里唯一调用点是 NFC 门禁卡模拟的配置下发（/nfc/antifraud/config），
+!   并非涉诈行为上报；拦了会影响 NFC 门禁。
+||fraud-detection.engine.miui.com^
+! AI 通话防护（AI Guard）机密计算检测通道，上传音频/视频片段做 AI 判定。
+||detection-aigc.engine.miui.com^
+! ⚠ 安全中心通用接口：/user/ra 上传已装应用包名做风险检测、/gc/dir 拉垃圾
+!   清理规则库。不只是反诈，拦了手机管家相关页面可能异常。
+||flash.sec.miui.com^
+! 安全中心框架 / 云控接口。
+||framework.sec.miui.com^
+! ⚠ 权限云控，公开 hosts 规则特意注释并注明「禁用后无法开启部分权限」。
+||srv.sec.miui.com^
+! ⚠ 病毒扫描引擎与病毒白名单/流量更新接口；拦了安全扫描的云端查询会失效。
+||virus-engine.sec.miui.com^
+||api.sec.miui.com^
+! 行为/数据上报
+||data.sec.miui.com^
+! OneTrack 系统追踪（运营监控 / 广告归因两类子域）。
+||tracking.miui.com^
+||om.tracking.miui.com^
+
+! ==========================================================================
+! 未收录 / 待补（README 里出现但无法还原成完整域名，不要凭猜测写规则）
+!   pn-tracking-bak        —— 简称，公开规则里查不到对应完整域名
+!   海外 tracking 变体      —— 类别描述，非具体域名；疑似 tracking.intl.miui.com
+!                               / flash.sec.intl.miui.com / data.sec.intl.miui.com
+!                               等 intl 系列，拿到模块真机 hosts 再补
+!   README 称 19 个，实际列出 16 项 → 差的 3 条疑为「海外变体」展开后的条目
+! ── 非域名，勿误收 ────────────────────────────────────────────────────
+!   com.miui.securitycenter / com.xiaomi.security.xsof.* / com.miui.guardprovider
+!       → Android 包名与组件类名，不是域名
+!   net.dns1 → 系统属性名；127.0.0.1 → IP；module.pop / verify.sh → 文件名
+!   raw.githubusercontent.com → updateJson 模板地址，不是拦截目标
+! ==========================================================================

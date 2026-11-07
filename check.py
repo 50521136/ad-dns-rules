@@ -58,6 +58,27 @@ def main() -> int:
     ok = True
     print(f"blacklist.txt  拦截 {len(bl):3d} 条 | 内嵌放行 {len(bl_allow):2d} 条 | 注释候选 {bl_cmt:2d} 条")
     print(f"whitelist.txt  放行 {len(wl_allow):3d} 条 | 注释候选 {wl_cmt:2d} 条")
+
+    # 独立订阅文件：只校验自身语法与重复，不参与黑白名单冲突检测。
+    # 它们是给指定用户层单独导入的，和全局黑名单不是同一套作用域。
+    for extra in ("oem-telemetry.txt",):
+        p = ROOT / extra
+        if not p.exists():
+            continue
+        rules, allow, errs, cmt = load(p)
+        print(f"{extra:<22} 拦截 {len(rules):3d} 条 | 放行 {len(allow):2d} 条 | 注释候选 {cmt:2d} 条")
+        if errs:
+            ok = False
+            print(f"\n[{extra}] 语法问题:")
+            for e in errs:
+                print("  ", e)
+        for label, d in (("重复条目", dups(rules)),):
+            if d:
+                ok = False
+                print(f"\n[{extra}] {label}: {', '.join(d)}")
+        if allow:
+            ok = False
+            print(f"\n[{extra}] 该文件只应放拦截规则，出现了 {len(allow)} 条 @@ 放行规则")
     if wl_plain:
         ok = False
         print(f"  ! whitelist.txt 里出现了 {len(wl_plain)} 条不带 @@ 的拦截规则，白名单文件只应放 @@ 规则: {', '.join(wl_plain)}")

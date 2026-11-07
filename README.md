@@ -18,6 +18,21 @@ https://raw.githubusercontent.com/50521136/ad-dns-rules/main/blacklist.txt
 https://raw.githubusercontent.com/50521136/ad-dns-rules/main/whitelist.txt
 ```
 
+### 手机厂商系统组件域名（独立订阅，不并入合并产物）
+
+**厂商上报域名（反诈 / 遥测 / 追踪）**
+
+```
+https://raw.githubusercontent.com/50521136/ad-dns-rules/main/oem-telemetry.txt
+```
+
+这批**不是广告域名**，是 ROM 内置服务的云端接口，按品牌分节维护（目前只有小米 / HyperOS XSOF 一节）。
+拦了会同时关掉对应系统功能，有的还涉及紧急报警辅助、病毒扫描、权限云控，
+因此**故意不加进 `sources.json`** —— 合并产物是对所有租户全局生效的。
+按需单独订阅：自用设备或指定用户层导入，别当通用黑名单下发。
+
+来源与简称还原的证据链见 [docs/xsof-free-3.3.md](docs/xsof-free-3.3.md)。
+
 ### 合并产物（GitHub Actions 自动生成）
 
 由 [`.github/workflows/merge.yml`](.github/workflows/merge.yml) 每周自动拉取
@@ -93,6 +108,7 @@ AdGuard / AdGuard Home / 任意 adblock 语法的过滤器都能用：
 | 红果免费短剧 | 7.2.5.32 | 10 条 | [docs/hongguo-7.2.5.32.md](docs/hongguo-7.2.5.32.md) |
 | 微信 WeChat | 8.0.79 | 3 条 + 9 条通用第三方 | [docs/wechat-8.0.79.md](docs/wechat-8.0.79.md) |
 | 番茄小说 | 规则集转换（**非**逆向） | 12 条启用 + 11 条注释 | [blacklist.txt](blacklist.txt) 该节内注释 |
+| 小米 HyperOS XSOF | README 提取 + 公开 hosts 还原（**非**逆向） | 14 条，独立订阅 | [docs/xsof-free-3.3.md](docs/xsof-free-3.3.md) / [oem-telemetry.txt](oem-telemetry.txt) |
 
 **番茄小说那节是唯一不是逆向来的**：来源是第三方 Clash 规则集
 `https://yfamilys.com/rewrite/fanqienovel.conf`（作者 zqzess），做的是语法转换而不是域名提取。
