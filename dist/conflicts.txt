@@ -185,6 +185,7 @@ analytics-api-01.smzdm.com
 analytics.95516.com
 analytics.95516.com.wscdns.com
 analytics.amplitude.com
+analytics.cibc.com
 analytics.edgekey.net
 analytics.githubassets.com
 analytics.map.qq.com
@@ -323,7 +324,6 @@ api.zhuti.xiaomi.com
 api2-album.quark.cn
 api2.e.kuaishou.com
 api3-normal-sinfonlineb.fqnovel.com
-api4.tuisong.baidu.com
 api5-normal-lf.fqnovel.com
 api5-normal-lq.toutiaoapi.com
 api5-normal-sinfonlineb.fqnovel.com
@@ -430,7 +430,6 @@ b.stats.paypal.com
 b23.tv
 b3log.org
 b3logfile.com
-babel-statistics-android.dreport.meituan.net
 bad.news
 bag.itunes.apple.com
 baichuan-sdk.alicdn.com
@@ -459,7 +458,6 @@ belgium.wolterskluwer.com
 bestgore.fun
 bi.medscape.com
 bidobido.xyz
-bifrost-api.hotstar.com
 big.bilibili.com
 bigota.d.miui.com
 bing.com
@@ -515,7 +513,6 @@ c.mipcdn.com
 c.office.com
 c.pc.qq.com
 c.sayhi.360.cn
-c.tieba.baidu.com
 c.umsns.com
 c.y.qq.com
 c.youdao.com
@@ -764,7 +761,6 @@ cnnic.net.cn
 cnzz.com
 code.bdstatic.com
 code.sms.mob.com
-collector.appconsent.io
 collector.github.com
 collector.githubapp.com
 comate-ide.cdn.bcebos.com
@@ -877,7 +873,6 @@ d3g.qq.com
 d5-magic.a.kwimgs.com
 da.mmarket.com
 daikoku.ebis.ne.jp
-dailycaller.com
 danbooru.donmai.us
 dangbei.com
 dartsearch.net
@@ -1051,7 +1046,6 @@ dynatrace.com
 e-hentai.org
 e.customeriomail.com
 e.imguol.com
-e.tapdb.net
 e.weather.com.cn
 e3f49eaa46b57.cdn.sohucs.com
 eastus.api.speech.microsoft.com
@@ -1391,7 +1385,6 @@ hclips.com
 hctn.nv7s.com
 hcz-member.pingan.com.cn
 hcz-static.pingan.com.cn
-hd.browser.miui.com
 hdzog.ahcdn.com
 hdzog.com
 health.halodoc.com
@@ -1427,7 +1420,6 @@ hot.browser.intl.miui.com
 hot.browser.miui.com
 hotel.17u.cn
 hotsoon.snssdk.com
-howsmyssl.com
 hr.163.com
 href.li
 hreport.meituan.com
@@ -1448,7 +1440,6 @@ hub5emu.sandai.net
 hub5idx.v6.shub.sandai.net
 hub5pn.wap.sandai.net
 hudong.alicdn.com
-hugedomains.com
 hugelog.fcbox.com
 huichuan-mc.sm.cn
 huichuan.sm.cn
@@ -1850,7 +1841,6 @@ logincdn.msauth.net
 lp.pinduoduo.com
 lpcdn.pinduoduo.com
 luna-dict-community.nosdn.127.net
-lvbet.pl
 lx.meituan.net
 m-api.uc.cn
 m.163.com
@@ -2063,7 +2053,6 @@ mobilist.kuwo.cn
 modfile.mcmod.cn
 modrinth.com
 modyolo.com
-moengage.com
 moggy-image-1251316161.file.myqcloud.com
 mon.isnssdk.com
 mon.snssdk.com
@@ -2467,8 +2456,6 @@ pics.hentai.name
 pics.porndroids.com
 pifa.pinduoduo.com
 pings.conviva.com
-pinnacle.com
-pinnaclesports.com
 pinterest.com
 pitaya.bytedance.com
 piwik.org
@@ -2513,7 +2500,6 @@ postmediamontrealgazette2.files.wordpress.com
 pp.myapp.com
 pr.comet.yahoo.com
 preview-jupiter.sys.miui.com
-privacy-center.org
 privatehomeclips.com
 prod-chat-kimi-tos.moonshot.cn
 prod.impartner.live
@@ -2615,6 +2601,7 @@ ravm.tv
 raw.githubusercontent.com
 rd.bizrate.com
 rdelivery.qq.com
+reactandshare.com
 reader.browser.miui.com
 reading.snssdk.com
 readstatic.zhulang.com
@@ -2684,7 +2671,6 @@ rs.xmeye.net
 rt-m.kugou.com
 rt.rtoaster.jp
 rtbapi.douyucdn.cn
-rtoaster.jp
 ru.register.xmpush.global.xiaomi.com
 rule.tencent.com
 s-bid.rmp.rakuten.com
@@ -2739,7 +2725,6 @@ s3.voicecloud.cn
 s3plus-img.meituan.net
 s3plus.meituan.net
 s9.cnzz.com
-sa.tuisong.baidu.com
 safebrowsing.googleapis.com
 sanalytics.disneyplus.com
 saomiao.51240.com
@@ -2855,7 +2840,6 @@ smtp.focusgroupresearch.com
 snap.licdn.com
 snowflake.qq.com
 snowplow.swm.digital
-snrcdn.net
 sns-avatar-qc.xhscdn.com
 sns.m.taobao.com
 snzypic.com
@@ -2895,7 +2879,6 @@ ssai.aniview.com
 ssj-1256119282.cos.ap-guangzhou.myqcloud.com
 ssl-cdn.static.browser.mi-img.com
 ssl.gstatic.com
-ssl.o.auspost.com.au
 ssl.p.jwpcdn.com
 sso.curseforge.com
 sso.ele.me
@@ -2923,7 +2906,6 @@ static-mobilegame-1.biligame.net
 static-res.qq.com
 static-s.iqiyi.com
 static-ss.xvideos-cdn.com
-static-tapad.tapdb.net
 static-web.mimikko.cn
 static.122.gov.cn
 static.360buyimg.com
@@ -2945,7 +2927,6 @@ static.onelap.cn
 static.pddpic.com
 static.qiyi.com
 static.spankbang.com
-static.tieba.baidu.com
 static.woozooo.com
 static.ws.126.net
 static.xmcdn.com
@@ -3071,7 +3052,6 @@ tbv.sb-cd.com
 tcbox.baidu.com
 tdsdk.xdrig.com
 te.technical-service.net
-team-rec.jp
 teams.live.com
 technical-service.net
 test.nextdns.io
@@ -3091,7 +3071,6 @@ thirdwx.qlogo.cn
 thm.market.xiaomi.com
 thumbnail.thench.net
 thumbs2.imgbox.com
-tianshu-x.gtimg.cn
 tianshu.gtimg.cn
 tianxuan.gtimg.cn
 tieba-ares.cdn.bcebos.com
@@ -3277,7 +3256,6 @@ v2.get.sogou.com
 v2.jinrishici.com
 v2.oskwai.com
 v20.events.data.microsoft.com
-v20.vortex-win.data.microsoft.com
 v26-fq-tts.fqnovelvod.com
 v26-novelapp.fqnovelvod.com
 v3-fq-tts.fqnovelvod.com
@@ -3403,7 +3381,6 @@ webstatic.hoyoverse.com
 webstatic.nero.com
 webtoonscan.com
 webtor.io
-webwebfenxi.189.cn
 webzjcaptcha.reg.163.com
 weibo.com
 weidian.com
@@ -3423,7 +3400,6 @@ wiki.ad-gone.com
 wiki.biligame.com
 win.gdt.qq.com
 win10.ipv6.microsoft.com
-win8.ipv6.microsoft.com
 wk.idey.cn
 wl.jd.com
 wl.spotify.com
@@ -3554,7 +3530,6 @@ www.kuaishou.com
 www.kugou.com
 www.kuwo.cn
 www.lamborghini.com
-www.laomaotao.net
 www.lianjia.com
 www.listary.com
 www.listary.net
@@ -3674,6 +3649,7 @@ wxsnsdythumb.wxs.qq.com
 x.adnet.qq.com
 x.kuwo.cn
 x0.ifengimg.com
+x1.c.lencr.org
 x19.update.netease.com
 x2.ifengimg.com
 x6img.com

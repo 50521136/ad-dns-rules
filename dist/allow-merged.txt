@@ -1,6 +1,6 @@
 ! Title: ad-dns-rules 合并白名单（@@ 例外，可订阅到普通过滤器槽位）
 ! Rules: 6595
-! Generated: 2026-11-10 23:06:23 UTC
+! Generated: 2026-11-12 00:26:50 UTC
 ! Repo: https://github.com/50521136/ad-dns-rules
 !
 @@||0.client-channel.google.com^
@@ -358,6 +358,7 @@
 @@||analytics.95516.com.wscdns.com^
 @@||analytics.95516.com^
 @@||analytics.amplitude.com^
+@@||analytics.cibc.com^
 @@||analytics.edgekey.net^
 @@||analytics.githubassets.com^
 @@||analytics.itunes.apple.com^
@@ -950,7 +951,6 @@
 @@||c.pc.qq.com^
 @@||c.s-microsoft.com^
 @@||c.sayhi.360.cn^
-@@||c.tieba.baidu.com^
 @@||c.umsns.com^
 @@||c.y.qq.com^
 @@||c.youdao.com^
@@ -5266,7 +5266,6 @@
 @@||static.qiyi.com^
 @@||static.snapchat.com^
 @@||static.spankbang.com^
-@@||static.tieba.baidu.com^
 @@||static.tumblr.com^
 @@||static.woozooo.com^
 @@||static.ws.126.net.163jiasu.com^
@@ -6451,6 +6450,7 @@
 @@||x.dmsys.com^
 @@||x.kuwo.cn^
 @@||x0.ifengimg.com^
+@@||x1.c.lencr.org^
 @@||x19.update.netease.com^
 @@||x2.ifengimg.com^
 @@||x6img.com^
