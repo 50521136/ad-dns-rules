@@ -1,6 +1,6 @@
 ! Title: ad-dns-rules 合并白名单（@@ 例外，可订阅到普通过滤器槽位）
-! Rules: 6595
-! Generated: 2026-11-20 23:54:38 UTC
+! Rules: 6593
+! Generated: 2026-11-21 22:59:05 UTC
 ! Repo: https://github.com/50521136/ad-dns-rules
 !
 @@||0.client-channel.google.com^
@@ -4556,7 +4556,6 @@
 @@||pull-m1.wxlivecdn.com^
 @@||pull-rtmp-l26-cny.douyincdn.com.c.cdnhwc3.com^
 @@||pull2.91cloud.net^
-@@||puma.112.2o7.net^
 @@||punch.p2p.qq.com^
 @@||purch.com^
 @@||purchase.mp.microsoft.com^
@@ -4687,7 +4686,6 @@
 @@||redir.ownpage.fr^
 @@||redir.tradedoubler.com^
 @@||redirect.appmetrica.yandex.com^
-@@||redirect.disqus.com^
 @@||redirectingat.com^
 @@||redirectinteractionact-vod.kwd.inkuai.com^
 @@||redirectme.net^

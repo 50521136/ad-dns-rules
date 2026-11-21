@@ -2524,7 +2524,6 @@ pubmsg.meituan.com
 puds.ucweb.com
 pull-m1.wxlivecdn.com
 pull2.91cloud.net
-puma.112.2o7.net
 punch.p2p.qq.com
 puser.funshion.com
 push.chsi.com.cn
@@ -2611,7 +2610,6 @@ redefine2.hit.stat24.com
 redir.ownpage.fr
 redir.tradedoubler.com
 redirect.appmetrica.yandex.com
-redirect.disqus.com
 redirectingat.com
 redirector.gvt1.com
 ref.rbauction.com
