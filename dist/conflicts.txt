@@ -39,7 +39,6 @@ a7.mzstatic.com
 a8.mzstatic.com
 a8onlineshop.trendmicro.co.jp
 aa.tweakers.nl
-aaid.umeng.com
 aan.amazon.com
 aapl-edge0.qtlcdn.com
 aax-fe.amazon.co.jp
@@ -110,11 +109,9 @@ admin-oss-xlvip.a.88cdn.com
 admin.dable.io
 admin.mailchimp.com
 adnmb3.com
-ads.95516.com
 ads.cdn.tvb.com
 ads.google.com
 ads.microsoft.com
-ads.pinterest.com
 ads.snapchat.com
 ads.spotify.com
 ads.tdbank.com
@@ -122,7 +119,6 @@ ads.twitter.com
 ads.vk.com
 ads.vk.ru
 ads.x.com
-adserviceretry.kugou.com
 adsmind.gdtimg.com
 adstats.tencentmusic.com
 adv.ccb.com
@@ -164,7 +160,6 @@ alist.wavee.cn
 alistgo.com
 allcdn.china.qiniu.qnydns.com
 alps.51y5.net
-als.baidu.com
 alt1-mtalk.google.com
 alt2-mtalk.google.com
 alt3-mtalk.google.com
@@ -176,11 +171,9 @@ alt8-mtalk.google.com
 amap-aos-info-nogw.amap.com
 amdc.alipay.com
 amdc.m.taobao.com
-amdcopen.m.taobao.com
 amp-api-edge.apps.apple.com
 ams.lenovomm.com
 analysis-acc-ssl.xunlei.com
-analysis.chatglm.cn
 analytics-api-01.smzdm.com
 analytics.95516.com
 analytics.95516.com.wscdns.com
@@ -208,12 +201,9 @@ aod.cos.tx.xmcdn.com
 ap-southeast-1-ga.device.saf.aliyuncs.com
 ap-southeast-1.device.saf.aliyuncs.com
 ap.6wz.co
-ap.dongqiudi.com
 ap01.records.in.treasuredata.com
 ap6.ssl.msdk.qq.com
 apd-pcdniegwzlogin.teg.tencent-cloud.net
-apd-pcdnwxlogin.teg.tencent-cloud.net
-apd-pcdnwxstat.teg.tencent-cloud.net
 apd-vodp2plogin.teg.tencent-cloud.net
 api-access.pangolin-sdk-toutiao-b.com
 api-access.pangolin-sdk-toutiao.com
@@ -372,8 +362,6 @@ appimg-drcn.dbankcdn.com
 appimg.dbankcdn.com
 appldnld.apple.com
 appleid.apple.com
-applog.lc.quark.cn
-applog.uc.cn
 appmsg.gzmtr.cn
 apps.apple.com
 appsec-mobile.meituan.com
@@ -432,8 +420,6 @@ b3log.org
 b3logfile.com
 bad.news
 bag.itunes.apple.com
-baichuan-sdk.alicdn.com
-baichuan-sdk.taobao.com
 baijiahao.baidu.com
 baike.baidu.com
 baike.so.com
@@ -458,6 +444,7 @@ belgium.wolterskluwer.com
 bestgore.fun
 bi.medscape.com
 bidobido.xyz
+bifrost-api.hotstar.com
 big.bilibili.com
 bigota.d.miui.com
 bing.com
@@ -490,7 +477,6 @@ brand.heytap.com
 broadcastlv.chat.bilibili.com
 broccoli.uc.cn
 browser-intake-datadoghq.eu
-browser.events.data.msn.com
 browser.pipe.aria.microsoft.com
 browser.sentry-cdn.com
 bs-origin.pull.yximgs.com
@@ -503,7 +489,6 @@ by.uservoice.com
 c.58cdn.com.cn
 c.bing.com
 c.duomai.com
-c.evidon.com
 c.fantia.jp
 c.gdt.qq.com
 c.isdspeed.qq.com
@@ -877,7 +862,6 @@ danbooru.donmai.us
 dangbei.com
 dartsearch.net
 dashi.163.com
-data-sdk-uuid-log.d.meituan.net
 data-sdk-uuid-report.dreport.meituan.net
 data.adxcel-ec2.com
 data.bilibili.com
@@ -889,7 +873,6 @@ data.email.premierleague.com
 data.flurry.com
 data.game.xiaomi.com
 data.mistat.intl.xiaomi.com
-data.mistat.xiaomi.com
 data.notify.macys.com
 data.onelap.cn
 data.orders.costco.ca
@@ -1092,7 +1075,6 @@ encrypted-tbn2.gstatic.com
 encrypted-tbn3.gstatic.com
 engine.tuia.cn
 enigmasoftware.com
-enrichgw.10010.com
 ens.nzz.ch
 envato.market
 ereg.adobe.com
@@ -1196,7 +1178,6 @@ foundation.youdao.com
 fourhoi.com
 fourier-videoclip-eu.allawnos.com
 fourier-videoclip-in.allawnos.com
-fp-it.fengkongcloud.com
 fp-upload.dun.163.com
 fp.tongdun.net
 fpdownload.macromedia.com
@@ -1419,6 +1400,7 @@ hot.browser.intl.miui.com
 hot.browser.miui.com
 hotel.17u.cn
 hotsoon.snssdk.com
+howsmyssl.com
 hr.163.com
 href.li
 hreport.meituan.com
@@ -1439,9 +1421,7 @@ hub5emu.sandai.net
 hub5idx.v6.shub.sandai.net
 hub5pn.wap.sandai.net
 hudong.alicdn.com
-hugelog.fcbox.com
-huichuan-mc.sm.cn
-huichuan.sm.cn
+hugedomains.com
 huluxia.com
 hycdn.cn.codm.qq.com
 i.dell.com
@@ -1840,6 +1820,7 @@ logincdn.msauth.net
 lp.pinduoduo.com
 lpcdn.pinduoduo.com
 luna-dict-community.nosdn.127.net
+lvbet.pl
 lx.meituan.net
 m-api.uc.cn
 m.163.com
@@ -2052,6 +2033,7 @@ mobilist.kuwo.cn
 modfile.mcmod.cn
 modrinth.com
 modyolo.com
+moengage.com
 moggy-image-1251316161.file.myqcloud.com
 mon.isnssdk.com
 mon.snssdk.com
@@ -2155,7 +2137,6 @@ nhentai.net
 nileapi.market.xiaomi.com
 nimg.ws.126.net
 nineto5mac-d.openx.net
-nishub1.10010.com
 njavtv.com
 nmobi.kuwo.cn
 noodlemagazine.com
@@ -2264,7 +2245,6 @@ orange-dc.alibaba.com
 orbit.jd.com
 osb-ussvc.samsungqbe.com
 osp.meituan.net
-oss-asq-static.11222.cn
 oss.b3logfile.com
 oss.weread.qq.com
 ossapi.baidu.com
@@ -2455,6 +2435,8 @@ pics.hentai.name
 pics.porndroids.com
 pifa.pinduoduo.com
 pings.conviva.com
+pinnacle.com
+pinnaclesports.com
 pinterest.com
 pitaya.bytedance.com
 piwik.org
@@ -2499,6 +2481,7 @@ postmediamontrealgazette2.files.wordpress.com
 pp.myapp.com
 pr.comet.yahoo.com
 preview-jupiter.sys.miui.com
+privacy-center.org
 privatehomeclips.com
 prod-chat-kimi-tos.moonshot.cn
 prod.impartner.live
@@ -2668,6 +2651,7 @@ rs.xmeye.net
 rt-m.kugou.com
 rt.rtoaster.jp
 rtbapi.douyucdn.cn
+rtoaster.jp
 ru.register.xmpush.global.xiaomi.com
 rule.tencent.com
 s-bid.rmp.rakuten.com
@@ -2837,6 +2821,7 @@ smtp.focusgroupresearch.com
 snap.licdn.com
 snowflake.qq.com
 snowplow.swm.digital
+snrcdn.net
 sns-avatar-qc.xhscdn.com
 sns.m.taobao.com
 snzypic.com
@@ -3049,6 +3034,7 @@ tbv.sb-cd.com
 tcbox.baidu.com
 tdsdk.xdrig.com
 te.technical-service.net
+team-rec.jp
 teams.live.com
 technical-service.net
 test.nextdns.io
@@ -3378,6 +3364,7 @@ webstatic.hoyoverse.com
 webstatic.nero.com
 webtoonscan.com
 webtor.io
+webwebfenxi.189.cn
 webzjcaptcha.reg.163.com
 weibo.com
 weidian.com

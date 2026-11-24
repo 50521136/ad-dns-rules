@@ -7,12 +7,12 @@
 |---|---|---|---|---|---|---|---|---|
 | block | 217heidai | 241917 | 241906 | 0 | 0 | 241879 | 0 | 1 |
 | block | 234 | 13177 | 12969 | 0 | 0 | 12968 | 162 | 37 |
-| block | menghui | 329711 | 329024 | 79 | 0 | 329044 | 397 | 206 |
+| block | menghui | 338977 | 338290 | 79 | 0 | 338304 | 397 | 206 |
 | block | 扶风 | 33605 | 20787 | 10893 | 0 | 24153 | 827 | 527 |
-| block | 海哥 | 13196 | 12983 | 0 | 0 | 12981 | 164 | 36 |
+| block | 海哥 | 13234 | 13020 | 0 | 0 | 13018 | 164 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 352 | 94 | 0 | 0 | 94 | 0 | 0 |
-| allow | 234 | 6394 | 6140 | 0 | 0 | 6140 | 182 | 0 |
+| allow | 234 | 6354 | 6100 | 0 | 0 | 6100 | 182 | 0 |
 | allow | menghui | 461 | 444 | 0 | 0 | 444 | 10 | 2 |
 | allow | kuner | 80 | 37 | 0 | 0 | 37 | 11 | 1 |
 | allow | trli | 1431 | 0 | 0 | 1409 | 1404 | 10 | 0 |
@@ -20,11 +20,11 @@
 
 ## 结果
 
-- 黑名单输出：**369397** 条
-- 白名单输出：**6593** 条（已统一 `@@||domain^` 语法）
+- 黑名单输出：**374799** 条
+- 白名单输出：**6568** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**94** 个
 - 因自建黑名单优先而剔除的放行条目：**16** 条
-- 同域既拦又放（保留放行侧）：**3730** 条
+- 同域既拦又放（保留放行侧）：**3717** 条
 
 ## 解析备注
 
@@ -35,11 +35,11 @@
 - `block/menghui` 有 206 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
 - `block/扶风` 有 827 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
 - `block/扶风` 有 527 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
-- `block/海哥` 有 164 条含通配符/正则的规则被跳过，样例：`||*-99wanyou-com-idvkrgg.qiniudns.co`, `||*-default.ixigua.com^`, `||*-hl.toutiaoapi.com^`, `||*-jor0b302fdhgwnccw8g.com^`
+- `block/海哥` 有 164 条含通配符/正则的规则被跳过，样例：`||*kpdz.com^`, `||*-99wanyou-com-idvkrgg.qiniudns.co`, `||*-default.ixigua.com^`, `||*-hl.toutiaoapi.com^`
 - `block/海哥` 有 36 条无法解析被丢弃，样例：`||/7gq78s4ltrea/^`, `||0019a^`, `||216.239.35.0/24^`, `||295cdn^`
 - `block/暗雅日记` 有 25 条含通配符/正则的规则被跳过，样例：`||ad*.idcyz.hb1.kwaidc.com^`, `||ads*-normal-hl.zijieapi.com^`, `||ads*-normal-lf.zijieapi.com^`, `||ads*-normal-lq.zijieapi.com^`
 - `block/暗雅日记` 有 1 条无法解析被丢弃，样例：`||api.zhihu.com/ad-style-service`
-- `allow/234` 有 182 条含通配符/正则的规则被跳过，样例：`||*.*.szbdyd.com^`, `||*.4399.com^`, `||*.5054399.com^`, `||*.7k7k.com^`
+- `allow/234` 有 182 条含通配符/正则的规则被跳过，样例：`@@||*.*.szbdyd.com^`, `@@||*.4399.com^`, `@@||*.5054399.com^`, `@@||*.7k7k.com^`
 - `allow/menghui` 有 10 条含通配符/正则的规则被跳过，样例：`@@||api-v*.trbo.com^`, `@@||bcicl.*.evergage.com^`, `@@||brm-core-*.brsrvr.com^`, `@@||cdn.us*.exponea.com^`
 - `allow/menghui` 有 2 条无法解析被丢弃，样例：`@@-ds.metric.gstatic.com^`, `@@||白名单仅用于测试.com^`
 - `allow/kuner` 有 11 条含通配符/正则的规则被跳过，样例：`@@||*m*.360buyimg.com^`, `@@||storage*360buyimg.com^`, `@@||p*reading*sign.fqnovelpic.com^`, `@@||api*normal*fqnovel.com^`
@@ -275,7 +275,7 @@
 
 ## 同域冲突
 
-共 3730 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
+共 3717 条：这些域名在合并黑名单里要拦、在合并白名单里要放，AGH 里例外优先，所以**实际不会拦**。
 
 想把其中某几个恢复拦截：把它们加进 `blacklist.txt`，下次跑流水线会自动剔除白名单侧对应条目。
 完整清单见 `dist/conflicts.txt`。
@@ -321,7 +321,6 @@
 - `a8.mzstatic.com`
 - `a8onlineshop.trendmicro.co.jp`
 - `aa.tweakers.nl`
-- `aaid.umeng.com`
 - `aan.amazon.com`
 - `aapl-edge0.qtlcdn.com`
 - `aax-fe.amazon.co.jp`
@@ -392,11 +391,9 @@
 - `admin.dable.io`
 - `admin.mailchimp.com`
 - `adnmb3.com`
-- `ads.95516.com`
 - `ads.cdn.tvb.com`
 - `ads.google.com`
 - `ads.microsoft.com`
-- `ads.pinterest.com`
 - `ads.snapchat.com`
 - `ads.spotify.com`
 - `ads.tdbank.com`
@@ -404,7 +401,6 @@
 - `ads.vk.com`
 - `ads.vk.ru`
 - `ads.x.com`
-- `adserviceretry.kugou.com`
 - `adsmind.gdtimg.com`
 - `adstats.tencentmusic.com`
 - `adv.ccb.com`
@@ -430,4 +426,8 @@
 - `aizhan.com`
 - `ajax.googleapis.com`
 - `akamaized.net`
-- …（还有 3580 条，见 conflicts.txt）
+- `aks.jdpay.com`
+- `alb-jjexm35p5nv4ven8gt.cn-shenzhen.alb.aliyuncsslb.com`
+- `ali-gamezone.static.yximgs.com`
+- `ali-ky.static.yximgs.com`
+- …（还有 3567 条，见 conflicts.txt）
