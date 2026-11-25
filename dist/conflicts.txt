@@ -1767,7 +1767,6 @@ line3-statics-h5-mobile-api.biligame.net
 link.mcmod.cn
 link.meet5.net
 link.morningbrew.com
-link.nzz.ch
 link.sylikes.com
 link.zhihu.com
 linka.page
@@ -3045,7 +3044,6 @@ thecubexguide.com
 thefantazy.com
 theme.heytapimage.com
 themis.soulapp.cn
-themoviedb.org
 theporndude.com
 thetvdb.com
 thirdparty.bnc.lt
