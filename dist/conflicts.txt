@@ -2962,6 +2962,7 @@ study.163.com
 su.uc.cn
 subscription.iqiyi.com
 sug.browser.miui.com
+sug.so.360.cn
 sugar.zhihu.com
 suggestion.baidu.com
 sugs.m.sm.cn

@@ -1,6 +1,6 @@
 ! Title: ad-dns-rules 合并白名单（@@ 例外，可订阅到普通过滤器槽位）
-! Rules: 6567
-! Generated: 2026-11-25 02:10:54 UTC
+! Rules: 6568
+! Generated: 2026-11-26 01:43:29 UTC
 ! Repo: https://github.com/50521136/ad-dns-rules
 !
 @@||0.client-channel.google.com^
@@ -5346,6 +5346,7 @@
 @@||substrate.office.com^
 @@||suconfig.apple.com^
 @@||sug.browser.miui.com^
+@@||sug.so.360.cn^
 @@||sugar.zhihu.com^
 @@||suggestion.baidu.com^
 @@||sugs.m.sm.cn^
