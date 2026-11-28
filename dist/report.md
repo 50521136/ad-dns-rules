@@ -7,9 +7,9 @@
 |---|---|---|---|---|---|---|---|---|
 | block | 217heidai | 241917 | 241906 | 0 | 0 | 241879 | 0 | 1 |
 | block | 234 | 13177 | 12969 | 0 | 0 | 12968 | 162 | 37 |
-| block | menghui | 347009 | 346323 | 78 | 0 | 346337 | 397 | 206 |
+| block | menghui | 347195 | 346588 | 78 | 0 | 346602 | 400 | 124 |
 | block | 扶风 | 33608 | 20791 | 10890 | 0 | 24157 | 827 | 529 |
-| block | 海哥 | 13269 | 13055 | 0 | 0 | 13053 | 164 | 36 |
+| block | 海哥 | 13267 | 13054 | 0 | 0 | 13052 | 164 | 36 |
 | block | 暗雅日记 | 415 | 385 | 0 | 0 | 385 | 25 | 1 |
 | block | 自建 | 352 | 94 | 0 | 0 | 94 | 0 | 0 |
 | allow | 234 | 6355 | 6101 | 0 | 0 | 6101 | 182 | 0 |
@@ -20,7 +20,7 @@
 
 ## 结果
 
-- 黑名单输出：**383345** 条
+- 黑名单输出：**383708** 条
 - 白名单输出：**6568** 条（已统一 `@@||domain^` 语法）
 - 自建黑名单域名：**94** 个
 - 因自建黑名单优先而剔除的放行条目：**16** 条
@@ -31,8 +31,8 @@
 - `block/217heidai` 有 1 条无法解析被丢弃，样例：`||fb_servpub-a.akamaihd.net^`
 - `block/234` 有 162 条含通配符/正则的规则被跳过，样例：`||*.texcn.cn^`, `||*.atvtkf.com^`, `||*.4393.cc^`, `||madou*.tv^`
 - `block/234` 有 37 条无法解析被丢弃，样例：`||xchcmmtn2z^`, `||cpcn2_2nd.bensiea.com^`, `||dlcdn996^`, `||bll5.com^-`
-- `block/menghui` 有 397 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
-- `block/menghui` 有 206 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
+- `block/menghui` 有 400 条含通配符/正则的规则被跳过，样例：`/193.200.64.24:/`, `analytics-*.aasaam.com`, `||*-datareceiver.aki-game.net^`, `||*-default-cn.rum.aliyuncs.com^`
+- `block/menghui` 有 124 条无法解析被丢弃，样例：`255.255.255.255 broadcasthost`, `charlestownwyllie.oaklawnnonantum.co`, `dlsdk.appsflyer.com^`, `dlsdk.appsflyersdk.com^`
 - `block/扶风` 有 827 条含通配符/正则的规则被跳过，样例：`||at*.doubanio.com^`, `||163487*.qmgmw.com^`, `||bjkedv*.xyz^`, `||gtlpa*.com^`
 - `block/扶风` 有 529 条无法解析被丢弃，样例：`.xyz/$domain=pan.huang1111.cn`, `||172.247.208.87/js/head.js`, `||qishula.com/css/ding.js`, `||aiqu2727.com/da/`
 - `block/海哥` 有 164 条含通配符/正则的规则被跳过，样例：`||*kpdz.com^`, `||*-99wanyou-com-idvkrgg.qiniudns.co`, `||*-default.ixigua.com^`, `||*-hl.toutiaoapi.com^`
